@@ -1,0 +1,353 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Ceevee - Free Responsive HTML5/CSS3 Template</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="{% static 'extrasheet/style/default.css' %}">
+	<link rel="stylesheet" href="{% static 'extrasheet/style/layout.css'%}">
+   <link rel="stylesheet" href="{% static 'extrasheet/style/media-queries.css' %}">
+   <link rel="stylesheet" href="{% static 'extrasheet/style/magnific-popup.css' %}">
+
+   
+
+   <!-- Favicons
+	================================================== -->
+   <link rel="shortcut icon" href="favicon.png" >
+   <style>
+      .forum {
+         position: relative;
+         height: 400px;
+         min-height: 400px;
+         width: 100%;
+         background: #161415;
+         background-size: cover !important;
+         -webkit-background-size: cover !important;
+         text-align: center;
+         overflow: hidden;
+      }
+      .grid-container {
+         display: grid;
+         grid-template-columns: auto auto auto;
+         grid-gap: 10px;
+         /* background-color: #2196F3; */
+         padding: 5px;
+         }
+
+         .grid-container > div {
+         /* background-color: rgba(255, 255, 255, 0.8); */
+         text-align: left;
+         padding: 20px 0;
+         /* font-size: 30px; */
+         }
+
+         .item1 {
+            margin-left: 30%;
+         grid-column-start: 2;
+         grid-column-end: 4;
+         }
+         .item2 {
+         grid-column-start: 4;
+         grid-column-end: 10;
+         }
+         .item3 {
+         grid-column-start: 2;
+         grid-column-end: 4;
+         }
+         .item4 {
+         grid-column-start: 4;
+         grid-column-end: 8;
+         }
+         .item5 {
+         grid-column-start: 8;
+         grid-column-end: 11;
+         }
+
+         .roundavatar{
+            border-radius: 50%;
+         }
+
+         body {
+  /* margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px; */
+}
+
+.container {
+  /* border: 2px solid #dedede; */
+  /* background-color: #f1f1f1; */
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 10% ;
+  margin-right: 10% ;}
+
+.container:hover {
+  /* border: 2px solid #dedede; */
+  background-color: black;
+  /* border-radius: 5px; */
+  padding: 10px;
+  margin-left: 8% ;
+  margin-right: 8% ;}
+
+.darker {
+  /* border-color: #ccc; */
+  /* background-color: #ddd; */
+    /* border-radius: 5px; */
+    border-radius: 10px;
+  padding: 10px;
+  margin-left: 10% ;
+  margin-right: 10% ;
+}
+
+.darker:hover{
+   background-color: black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 8% ;
+  margin-right: 8% ;
+
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #f8bd0f;
+}
+
+.time-left {
+  float: left;
+  color: #f8bd0f;
+}
+         
+   </style>
+
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <section id="" class="forum" style="background-color: black;margin-bottom: 0px;padding-top: 170px;">
+
+      <nav id="nav-wrap" style="background: black!important;">
+         <span href="" class="mobileonly">Logo</span>
+         <input type="text" placeholder="Search" class="mobileonly" style="margin-top: 5%;border-radius: 10px;">
+         <br>
+         <div class="mobileonly" >
+            <a href="viewclubs.html" style="color: #f8bd0f;">My Clubs</a>
+            <a href="" style="color: #f8bd0f;"></a>
+
+            
+            <a href="{% url 'insight' club.id %}" style="color: #f8bd0f;"> <button class="btn btn-success" type="submit" value="view insight">View Insight </button>
+            </a>
+
+
+         </div>
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class=""><a class="" href="joinclub.html">Join Club</a></li>
+            <li ><a href="viewclubs.html">My Clubs</a></li>
+	         <li><a class="" href="notifications.html">Notifications</a></li>
+            <li class="current"><a class="" href="forum.html">Forum</a></li>
+            <li><a class="" href="insights.html">Insights</a></li>
+
+            
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+      
+
+      <div class="row banner" style="margin-top: 30px!important;">
+         <div class="banner-text" >
+            <div style="float:left ;margin-left: 5%;text-align: left;">
+               <h2 style="color: rgb(250, 240, 202);">{{ club.club_name }}</h2>
+            <h6 style="color: white;"><span style="font-size: small;"> Niche:</span> {{ club.niche }}</h6>
+            <div  style="float: right;">
+               <details>
+                  <summary>About Club</summary>
+                  <p>{{ club.about_club }}.</p>
+                </details>
+
+            </div>
+            {% with club.join.count as total_join %}
+            <h5 style="color: white;"> <span style="text-align: left;color: #f8bd0f;">
+                 {{ total_join }} </span> <span style="font-size: small;"> Members</span></h5>
+            {% endwith %}
+            </div>
+            
+            <h1 class="responsive-headline" style="color: #FAF0CA;">Forum</h1>
+            
+            <br>
+            
+         </div>
+      </div>
+      
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+      </p>
+
+   </section> <!-- Header End -->
+
+   {% for cu in comm %}
+   <div class=" about" style="" id="about">
+      <h2 style="text-align: center;color: #f8bd0f;">Recent Forum Messages</h2>
+      <br>
+      <div class="container">
+         <p> By "{{ cu.club.name}}" </p>
+         <p>{{ cu.text }}</p>
+         <span class="time-right">{{ cu.date_created }}</span>
+       </div>
+       
+    </div>
+    {% endfor %}
+
+
+    
+
+
+ </section> <!-- About Section End-->
+
+   <!-- Call-To-Action Section
+   ================================================== -->
+   <section id="call-to-action" style="padding-bottom: 200px;">
+
+   
+
+    <div class="row">
+       <div class="two columns header-col">
+
+       </div>
+
+       <div class="seven columns">
+
+          <ul class="social-links">
+             <li style="display: inline;"><a href="facebook.com"><i class="fa fa-facebook"></i></a></li>
+             <li style="display: inline;"><a href="#"><i class="fa fa-twitter"></i></a></li>
+             <li style="display: inline;"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+             
+          </ul>
+
+          
+
+       </div>
+
+       <div class="three columns action download">
+          <ul class="copyright" style="display: inline;">
+             <li>&copy; Copyright 2020 Extrasheet</li>
+             <li>Design by <a href="#"  target="_blank">Extrasheet</a></li>   
+          </ul>
+
+
+
+       </div>
+
+      
+
+
+    </div>
+
+ </section> <!-- Call-To-Action Section End-->
+
+
+ 
+ <!-- footer
+ ================================================== -->
+ <footer class="footer" style='margin-bottom: 0px;margin-top: 0px;'>
+
+    <div class="row">
+
+       <div class="twelve columns">
+           
+
+          <ul class="social-links" style="display: inline-flexbox;">
+             <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+             <li><a href="#"><i class="fa fa-instagram"></i></a></li> -->
+             <li style="width: 50%;margin-top: 0px;" >
+                <form action="" method="POST">
+                    
+                  {% csrf_token %}
+                  <input type="text" name="text" {% if form.is_bound %}value="{{ form.text.value }}"{% endif %} style="border-radius: 10px;min-width: 60%;" class="form-control" placeholder="Type here" aria-label="Search" aria-describedby="basic-addon1"/>
+                  <input id="commt" style="margin-bottom:0px" class="btn btn-success" type="submit" value="Add insight"/> 
+               </form>
+             </li>
+             <li style="width:30%">   
+                 <br>     
+                 <br>     
+                 <i class="fa fa-paper-plane " style="color: #f8bd0f;"  aria-hidden="true"></i>
+             </li>
+          </ul>
+
+          
+
+       </div>
+
+       <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+    </div>
+
+
+    
+
+ </footer> 
+
+
+ <!-- Script
+   ================================================== -->
+   <script src="{% static 'extrasheet/scripts/modernizr.js' %}"></script>
+   <script src="https://kit.fontawesome.com/da92449f61.js" crossorigin="anonymous"></script>
+
+ <!-- Java Script
+ ================================================== -->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ <script>window.jQuery || document.write('<script src="{% static 'extrasheet/scripts/jquery-1.10.2.min.js' %}"><\/script>')</script>
+ <script type="text/javascript" src="{% static 'extrasheet/scripts/jquery-migrate-1.2.1.min.js' %}"></script>
+
+ <script src="{% static 'extrasheet/scripts/jquery.flexslider.js' %}"></script>
+ <script src="{% static 'extrasheet/scripts/waypoints.js' %}"></script>
+ <script src="{% static 'extrasheet/scripts/jquery.fittext.js' %}"></script>
+ <script src="{% static 'extrasheet/scripts/magnific-popup.js' %}"></script>
+ <script src="{% static 'extrasheet/scripts/init.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+#sign_block{
+    width: 94%;
+    max-width: 360px;
+    margin-top: 38px;
+    margin-bottom: 24px;
+}
+::-webkit-input-placeholder { /* Edge */
+    color: var(--hint-color);
+    font-size: var(--text-normal);
+}
+:-ms-input-placeholder { /* Internet Explorer */
+    color: var(--hint-color);
+    font-size: var(--text-normal);
+}
+::placeholder {
+    color: var(--hint-color);
+    font-size: var(--text-normal);
+}
+#sign_block input:not([type=submit]):not([type=checkbox]) {
+    display: block;
+    width: 100%;
+    font-size: var(--text-normal);
+    padding: var(--btn-padding);
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-color: var(--border-color);
+    border-bottom-width: 2px;
+    margin-bottom: 8px;
+    outline: none;
+}
+#sign_block input[type=submit]{
+    display: inline-block;
+    margin: 8px 0px 16px;
+}
+label, input[type=checkbox]{
+    font-size: 12px;
+    margin: 8px 2px;
+}

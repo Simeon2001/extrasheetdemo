@@ -1,0 +1,294 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HTML Result</title>
+<link rel="stylesheet" href="{% static 'extrasheet/style/bootstrap.min.css' %}">
+
+    <style>
+
+.container h1{
+text-align:center;
+}
+
+
+        .change:hover {
+        /* background-color: #05014a; */
+        background-image: linear-gradient(to bottom right, #05014a, gold);
+        color: white;
+        /* box-shadow: 2px 2px 2px 2px black */
+        }
+        .navbar-brand:hover {
+        color: gold;
+        }
+
+nav input{
+border-radius:10px;
+}
+
+        /* a:hover {
+        color: gold;
+        } */
+
+            /* other styles */
+        body {
+          margin: 0 auto;
+          max-width: 1200px;
+          
+          /* background-image: linear-gradient(to bottom right, #05014a, gold); */
+
+        }
+        
+        .custom-container {
+          border: 2px solid #dedede;
+          background-color: #f1f1f1;
+          border-radius: 5px;
+          padding: 10px;
+          margin: 10px 0;
+        }
+        
+        .darker {
+          border-color: #ccc;
+          background-color: #ddd;
+        }
+        
+        .custom-container::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        
+        .custom-container img {
+          float: left;
+          max-width: 60px;
+          width: 100%;
+          margin-right: 20px;
+          border-radius: 50%;
+        }
+        
+        .custom-container img.right {
+          float: right;
+          margin-left: 20px;
+          margin-right:0;
+        }
+        
+        .time-right {
+          float: right;
+          color: #aaa;
+        }
+        
+        .time-left {
+          float: left;
+          color: #999;
+        }
+nav{
+width:100%;
+}
+        </style>
+        
+    <script src="https://use.fontawesome.com/f73cd49936.js"></script>
+
+</head>
+<body>
+  <div class="body-content">
+      <nav class="d-none d-lg-block navbar navbar-expand-lg bg-dark navbar-dark fixed-top" style="    background-color: #05014a!important;">
+          <!-- Brand -->
+          <a class="navbar-brand" style="color: gold;" href="#"><h1>EXTRASHEET</h1></a>
+        
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav" style="width: 100%;">
+              <li class="nav-item" style="width: 100%;">
+                  <a class="nav-link" ></a>
+                </li>
+              <li class="nav-item" style="width: 100%;">
+                <a class="nav-link" href="#">Club</a>
+              </li>
+              <li class="nav-item" style="width: 100%;">
+                <a class="nav-link" href="#">Room</a>
+              </li>
+              <li class="nav-item" style="float:right!important;" style="width: 100%;">
+                <a href="{% url 'forum' club.id %}" style="color: #f8bd0f;"> <button class="btn btn-success" type="submit" value="view insight">View Insight </button>
+                </a>
+              </li>
+            </ul>
+            
+          </div>
+      </nav>
+      <!-- <nav class="d-lg-none  navbar navbar-expand bg-dark navbar-dark fixed-top" style="    background-color: #05014a!important;"> -->
+        <!-- Brand -->
+        <!-- <a class="navbar-brand" style="color: gold;" href="#"><h1>EXTRASHEET</h1></a> -->
+        
+          <!-- Toggler/collapsibe Button -->
+          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+        
+      
+        <!-- Navbar links -->
+        <!-- <div class="collapse navbar-collapse" id="">
+          <ul class="navbar-nav" style="width: 100%;">
+            <li class="nav-item" style="width: 100%;">
+                <a class="nav-link" ></a>
+              </li>
+            <li class="nav-item" style="width: 100%;">
+              <a class="nav-link" href="#">Hey</a>
+            </li>
+            <li class="nav-item" style="width: 100%;">
+              <a class="nav-link" href="#">Hi</a>
+            </li>
+            <li class="nav-item" style="float:right!important;" style="width: 100%;">
+              <a class="nav-link" href="#">Notifications</a>
+            </li>
+          </ul>
+          
+        </div>
+        
+    </nav> -->
+
+
+    <nav class="d-lg-none navbar navbar-expand-lg bg-dark navbar-dark" style="    background-color: #05014a!important; width:100%;">
+        <a class="navbar-brand" style="color: gold;" href="#">EXTRASHEET</a>
+        <input type="text" name="" id="" style="width:40%;" placeholder="Search">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbars">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse navbars" id="navbar2">
+          <ul class="navbar-nav">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Link 1</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Link 1</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Link 1</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  
+  <!-- 
+  faded
+  -->
+  <nav class="navbar navbar-expand-sm bg-white navbar-light" style="   color:white; background-color: #05014a!important;">
+      <a href="#" class="navbar-brand" style="color:white;">Club</a>
+      <a href="{% url 'forum' club.id %}" style="color: #f8bd0f;"> <button class="btn btn-success" type="submit" value="view Forum">View Forum </button>
+                </a>
+
+      <div class="navbar-collapse collapse navbars" id="navbar1">
+          <ul class="navbar-nav">
+              <!-- <li class="nav-item active">
+                  <a class="nav-link" href="#">Link 2 <span class="sr-only">Home</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Link 2</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Link 2</a>
+              </li> -->
+          </ul>
+      </div>
+  </nav>
+    <!-- <div class="row">
+      <ul class="navbar-nav" style="width: 100%;">
+        <li class="nav-item" style="width: 100%;">
+            <a class="nav-link" ></a>
+          </li>
+        <li class="nav-item" style="width: 100%;">
+          <a class="nav-link" href="#">try</a>
+        </li>
+        <li class="nav-item" style="width: 100%;">
+          <a class="nav-link" href="#">try</a>
+        </li>
+        <li class="nav-item" style="float:right!important;" style="width: 100%;">
+          <a class="nav-link" href="#">try</a>
+        </li>
+      </ul>
+
+    </div> -->
+        
+
+
+
+        <div class="container" >
+
+
+            <div class="row justify-content-center" style="padding-top:10px;">
+                    
+
+
+
+            </div>
+            
+
+
+            
+
+
+            
+                        
+                        
+                    
+
+
+        </div>
+
+
+
+                    
+
+
+
+  {% if a == club.name_id %}
+    <div style="margin-top:3px" class="shadow-lg p-3 mb-5 bg-white rounded container sm-6">  
+    <form action="" method="POST" enctype="multipart/form-data" class="form-inline">
+      {% csrf_token %}
+      <label class="sr-only" for="inlineFormInputText">Text</label>
+      <textarea type="text" name="text" {% if form.is_bound %}value="{{ form.text.value }}"{% endif %} class="form-control mb-2 mr-sm-2" id="inlineFormInputText" placeholder="write your insight or caption"></textarea>
+      <label class="sr-only" for="inlineFormInputImages">Upload Images</label>
+      <input type="file" name="upload_file" {% if form.is_bound %}value="{{ form.upload_file.value }}"{% endif %} accept="image/*" class="form-control mb-2 mr-sm-2"  id="id_upload_file"/>
+      <input id="commt" style="margin-bottom:0px" class="btn btn-success" type="submit" value="Add insight"/>
+    </form>
+    </div>
+  {% else %}
+  <h1>:-)</h1>
+  {% endif %}
+        <div style="margin-top:9px" class="shadow-lg p-3 mb-5 bg-white rounded container sm-6">
+            {% for cu in comm %}
+            <div class="card-deck">
+                <div class="shadow-lg p-3 mb-5 bg-white rounded card">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">By {{cu.club.name}}</h5>
+                        <p class="card-text">{{ cu.text }}</p>
+                        
+                    </div>
+                    {% if cu.upload_file %}
+                        <img src="{{ cu.upload_file.url }}" class="card-img-top" alt="{{link.username}}">
+                    {% endif %}
+                    <div class="card-footer">
+                        <small class="text-muted">{{cu.date_created}}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        </br>
+    </div>
+
+</body>
+<script src="{% static 'extrasheet/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'extrasheet/scripts/bootstrap.bundle.min.js' %}"></script>
+<script>
+    $enable-shadows;
+</script>
+</html>

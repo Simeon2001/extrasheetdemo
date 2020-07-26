@@ -1,0 +1,22 @@
+:root{
+    /* main color */
+    --bg-color: #fdfdfd;
+    --bg-ligth: #ffffff;
+    --bg-dark: #eeeeee;
+
+    /* style color */
+    --top-color: #000099;
+    --top-bg: gold;
+    --border-color: gold;
+
+    /* text color */
+    --text-color: #202020;
+    --text-second-color: #eee;
+    --hint-color: #aaa;
+    --link-color: rgb(115, 177, 248);
+    --hover-color: rgb(115, 177, 248);
+
+    /* dimentions */
+    --btn-padding: 6px 12px;
+    --text-normal: 16px;
+}

@@ -1,0 +1,55 @@
+#sign_block fieldset{
+    border: none;
+    padding: 0px;
+}
+
+#sign_block fieldset legend{
+    background-color: #eee;
+    color: rgb(20, 54, 204);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+#sign_block fieldset legend span{
+    color: rgb(250, 27, 27);
+}
+#sign_block fieldset legend.active, #sign_block fieldset legend:hover{
+    background-color: #ccc;
+}
+#sign_block fieldset legend::after{
+    content: '\25BC'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+#sign_block fieldset legend.active::after{
+    content: "\25B6"; /* Unicode character for "minus" sign (-) */
+}
+#sign_block fieldset .content{
+    padding: 2px 18px 0;
+    background-color: var(--bg-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+#sign_block table.recycle{
+    border-collapse: collapse;
+    width: 100%;
+}
+#sign_block .recycle .view td{
+    vertical-align: top;
+    padding: 0px;
+    width: 100%;
+}
+#sign_block .recycle .view button{
+    background-color: var(--bg-color);
+    color: var(--top-color);
+    border: none;
+    padding: 6px 8px 8px;
+    margin: 0;
+}

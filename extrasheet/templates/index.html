@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/stylle.css' %}">
+</head>
+<body>
+ <div id="app">
+    <div class="picture" style="background-image: url('{% static 'extrasheet/img/a.jpg' %}');" v-if="first === 1">
+        <div class="textt">
+            <h4 id="well">WELCOME TO</h4>
+            
+            <div style="background-image: url('{% static 'extrasheet/img/w.png' %}');" id="logo"><h1 id="E">E</h1></div>
+            
+            <h2 id="ext">ExtraSheet</h2>
+            <a href="#2"><button @click.prevent="next()" id="cont" ><h4>FIND<span> OUT</span> MORE..</h4></button></a>
+        </div>
+    </div>
+    <!--=======================-->
+    <div id="2" class="page2" style="background-image: url('img/a.jpg');" v-if="first === 2">
+        <div class="texttt">
+            <div style="background-image: url('img/w.png');" id="logo"><h1 id="E">E</h1></div>
+            
+            <h2 id="ext">ExtraSheet</h2>
+            <a href="{% url 'register' %}"><button id="contr"><h4>CREATE ACCOUNT</h4></button></a>
+            <a href="{% url 'login' %}"><button id="contr"><h4>SIGN IN</h4></button></a>
+<br>
+            <h4 id="cond">By Signing Up You're Agreeing To Our Terms And Conditions</h4>
+            
+            
+        </div>
+        
+        
+    </div>
+    
+    
+ </div>  
+    
+    <script src="{% static 'extrasheet/scripts/vue.min.js"></script>
+    <script src="{% static 'extrasheet/scripts/stylle.js"></script>
+<!--===============================================================================================-->
+</body>
+</html>

@@ -1,0 +1,13 @@
+<style>
+    h4,h6 {
+        text-weight: 2em;
+    }
+</style>
+
+<h4 style="text-size:2em">helloworld</h4>
+<h6 style="text-size:2em">Club welcome</h6>
+
+<h5>{{ club.club_name }}-{{ club.niche }}</h5>
+{{ club.id }}
+<a id="btc" class="btn btn-primary" href="{% url 'forum' club.id %}">see comment</a>
+<a id="btc" class="btn btn-primary" href="{% url 'forum' club.id %}">see comment</a>
