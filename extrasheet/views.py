@@ -35,7 +35,7 @@ class RegisterView(generic.CreateView):
     
 #Profile
  
-class ProfilesCreateView(CreateView):
+class ProfilesCreateView(LoginRequiredMixin,CreateView):
     
     model = Profile
     success_url = reverse_lazy('clubl')
@@ -49,7 +49,7 @@ class ProfilesCreateView(CreateView):
         
 #club form
 
-class ClubCreateView(CreateView):
+class ClubCreateView(LoginRequiredMixin,CreateView):
     model = Club
     success_url = reverse_lazy('Home/')
     template_name = 'club.html'
