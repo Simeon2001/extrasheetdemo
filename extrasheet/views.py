@@ -63,6 +63,8 @@ class ClubCreateView(LoginRequiredMixin,CreateView):
     def form_valid(self, form): # new
         form.instance.name = self.request.user
         return super().form_valid(form)
+        
+        
 #filter club based on personal interest
 @login_required(login_url='login')    
 def club_view (request):
@@ -90,12 +92,14 @@ def join_club (request):
 @login_required(login_url='login')    
 def club_join (request):
     cj = request.user.join.all()
-    for club in cj:
-        print (club.club_name)
-        a=club.club_name
-    b=a
+    #for club in cj:
+        #print (club.club_name)
+       #a=club.club_name
+    #b=a
     #create_notify('you are in',cj )
     return render (request,'club_joined.html',{'cj':cj})
+    
+    
 @login_required(login_url='login')    
 def club_forum (request,pi):
     club  = get_object_or_404(Club,pk=pi)
@@ -111,25 +115,40 @@ def club_forum (request,pi):
     else:
 	    form = ForumForm()
     return render(request,'forum.html',{'comm':comm,'form':form,'club':club})
+    
+    
 @login_required(login_url='login')    
 def clubs (request,pi):
     club  = get_object_or_404(Club,club_name=pi)
     return render (request,'cj.html',{'club':club})
+
+#b = []
+#a = 1,9,11
+#for no in a:
+    #b.append(no)
+    #print (b)
+    #c = b
+
+#print (c)"   
+    
 @login_required(login_url='login')       
 def club_insight (request,pi) :
     current_user = request.user
     a = current_user.id
     club  = get_object_or_404(Club,pk=pi)
     comm = club.club_update.all()
-    #join = club.join.all()
-    #for cb in join:
-        #for no in cb.id :
+    join = club.join.all()
+    j = []
+    for cb in join:
+        j.append(cb.id)
             #print (no)
             #print (cb.id)
            # print (a)
             #if a != cb.id :
                 
-                #return redirect ('clubl')
+    print (j)
+    if not a in j:
+        return redirect ('clubl')
             
     insi = None
     if request.method == 'POST':
@@ -140,7 +159,7 @@ def club_insight (request,pi) :
             insi.save()
     else:
 	    form = InsightForm()
-    return render(request,'insight.html',{'comm':comm,'form':form,'club':club,'a':a})
+    return render(request,'insight.html',{'comm':comm,'form':form,'club':club,'a':a,'join':join,'j':j})
     
     
     
