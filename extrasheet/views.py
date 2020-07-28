@@ -13,15 +13,30 @@ from extrasheet.utils import create_notify
 from .forms import ForumForm,InsightForm
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
+from django.http import HttpResponse
+from django.template import loader
+
 # Create your views here.
 def index (request):
     user = request.user
+    current_user = request.user
+    a = current_user.id
+    d = []
+    pr = Profile.objects.all()
+    for no in pr :
+        d.append(no.name_id)
+        print (d)
+        
     if user.is_authenticated:
-        return redirect ('clubl')
-    #if User.is_authenticated:
+        if  a in d:
+            return redirect ('clubl')
+        else:
+            return redirect ('profile')
+    
     else:    
-        #return render (request, 'index.html')
+        
         return render (request,'index.html')
+        
 #login
 class LoginView(auth_views.LoginView):
     form_class = LoginForm
@@ -36,10 +51,26 @@ class RegisterView(generic.CreateView):
 #Profile
  
 class ProfilesCreateView(LoginRequiredMixin,CreateView):
-    
+    def get(self, request, *args, **kwargs):
+        current_user = self.request.user
+        a = current_user.id
+        d = []
+        template = loader.get_template('extrasheet/profile.html')
+        context = {'a':a}
+        pr = Profile.objects.all()
+        for no in pr :
+            d.append(no.name_id)
+        
+        if not a in d:
+            
+            return HttpResponse(template.render(context, request))
+        else:
+            return redirect('clubl')
     model = Profile
+    
+        
     success_url = reverse_lazy('clubl')
-    template_name = 'profile.html'
+    template_name = 'extrasheet/profile.html'
     
     fields = ['profile_image','school_name','gender','major_courses','minor_courses','personal_interest','skills_you_have','skills_you_like_to_have','hobbies','spoken_languages','heros_or_rolemodels']
     login_url = 'login' 
@@ -99,7 +130,7 @@ def club_join (request):
     #create_notify('you are in',cj )
     return render (request,'club_joined.html',{'cj':cj})
     
-    
+#club forum    
 @login_required(login_url='login')    
 def club_forum (request,pi):
     club  = get_object_or_404(Club,pk=pi)
@@ -116,21 +147,13 @@ def club_forum (request,pi):
 	    form = ForumForm()
     return render(request,'forum.html',{'comm':comm,'form':form,'club':club})
     
-    
+#clubs    
 @login_required(login_url='login')    
 def clubs (request,pi):
     club  = get_object_or_404(Club,club_name=pi)
     return render (request,'cj.html',{'club':club})
 
-#b = []
-#a = 1,9,11
-#for no in a:
-    #b.append(no)
-    #print (b)
-    #c = b
-
-#print (c)"   
-    
+#club insight    
 @login_required(login_url='login')       
 def club_insight (request,pi) :
     current_user = request.user
@@ -141,11 +164,7 @@ def club_insight (request,pi) :
     j = []
     for cb in join:
         j.append(cb.id)
-            #print (no)
-            #print (cb.id)
-           # print (a)
-            #if a != cb.id :
-                
+        
     print (j)
     if not a in j:
         return redirect ('clubl')
@@ -162,8 +181,13 @@ def club_insight (request,pi) :
     return render(request,'insight.html',{'comm':comm,'form':form,'club':club,'a':a,'join':join,'j':j})
     
     
-    
-    
+#from django.http import HttpResponse
+#from django.views import View
+
+#class MyView(View):
+
+    #def get(self, request, *args, **kwargs):
+        #return HttpResponse('Hello, World!'   
     
     
     
