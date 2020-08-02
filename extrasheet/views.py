@@ -133,6 +133,7 @@ def club_join (request):
 #club forum    
 @login_required(login_url='login')    
 def club_forum (request,pi):
+    #current_user = request.user
     club  = get_object_or_404(Club,pk=pi)
     comm = club.club_comment.all()
     foru = None

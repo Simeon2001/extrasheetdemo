@@ -131,8 +131,8 @@ table {
 *:before,
 *:after {
    -moz-box-sizing: border-box;
-   -webkit-box-sizing: border-box;
-   box-sizing: border-box;
+   /* -webkit-box-sizing: border-box;
+   box-sizing: border-box; */
 }
 
 html {
@@ -539,7 +539,7 @@ select {
    border: 0;
    outline: none;
    vertical-align: middle;
-   min-width: 225px;
+   /* min-width: 225px; */
 	max-width: 100%;
    font-size: 15px;
    line-height: 24px;

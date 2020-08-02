@@ -19,7 +19,7 @@
 	<!-- CSS
     ================================================== -->
    <link rel="stylesheet" href="{% static 'extrasheet/style/default.css' %}">
-	<link rel="stylesheet" href="{% static 'extrasheet/style/layout.css'%}">
+	<link rel="stylesheet" href="{% static 'extrasheet/style/layout.css' %}">
    <link rel="stylesheet" href="{% static 'extrasheet/style/media-queries.css' %}">
    <link rel="stylesheet" href="{% static 'extrasheet/style/magnific-popup.css' %}">
 
@@ -27,7 +27,7 @@
 
    <!-- Favicons
 	================================================== -->
-   <link rel="shortcut icon" href="favicon.png" >
+   <link rel="shortcut icon" href="{% static 'extrasheet/style/favicon.png' %}" >
    <style>
       .forum {
          position: relative;
@@ -81,11 +81,11 @@
             border-radius: 50%;
          }
 
-         body {
+         /* body { */
   /* margin: 0 auto;
   max-width: 800px;
   padding: 0 20px; */
-}
+/* } */
 
 .container {
   /* border: 2px solid #dedede; */
@@ -96,8 +96,9 @@
   margin-right: 10% ;}
 
 .container:hover {
-  /* border: 2px solid #dedede; */
-  background-color: black;
+  border: 2px outset goldenrod;
+  /* background-color: gold; */
+  /* color: white!important; */
   /* border-radius: 5px; */
   padding: 10px;
   margin-left: 8% ;
@@ -114,7 +115,9 @@
 }
 
 .darker:hover{
-   background-color: black;
+   /* background-color: gold; */
+   border: 2px inset goldenrod;
+   /* color: white!important; */
   border-radius: 5px;
   padding: 10px;
   margin-left: 8% ;
@@ -144,13 +147,109 @@
 
 .time-right {
   float: right;
-  color: #f8bd0f;
+  color: black;
 }
 
 .time-left {
   float: left;
-  color: #f8bd0f;
+  color: black;
 }
+
+.forum {
+         position: relative;
+         /* height: 400px;
+         min-height: 400px; */
+         height: fit-content;
+         min-height: fit-content;
+         width: 100%;
+         background: #161415;
+         background-size: cover !important;
+         -webkit-background-size: cover !important;
+         text-align: center;
+         overflow: hidden;
+      }
+      .custom-container:hover{
+         background-color: black;
+         border-radius: 20px;
+         margin-left: 10%;
+         margin-right: 5%;
+         
+      }
+      .grid-container {
+         display: grid;
+         grid-template-columns: auto auto auto;
+         grid-gap: 10px;
+         /* background-color: #2196F3; */
+         padding: 5px;
+         }
+
+         .grid-container > div {
+         /* background-color: rgba(255, 255, 255, 0.8); */
+         text-align: left;
+         padding: 20px 0;
+         /* font-size: 30px; */
+         }
+
+         .item1 {
+            margin-left: 30%;
+         grid-column-start: 2;
+         grid-column-end: 4;
+         }
+         .item2 {
+         grid-column-start: 4;
+         grid-column-end: 10;
+         margin-right: 15%;
+         }
+         .item3 {
+         grid-column-start: 2;
+         grid-column-end: 4;
+         }
+         .item4 {
+         grid-column-start: 4;
+         grid-column-end: 8;
+         }
+         .item5 {
+         grid-column-start: 8;
+         grid-column-end: 11;
+         }
+
+         .roundavatar{
+            border-radius: 50%;
+         }
+
+         .tooltip {
+            position: relative;
+            /* display: inline-block; */
+            /* border-bottom: 1px dotted black; */
+            }
+
+            .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 300px;
+            background-color: white;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 5px;
+            position: absolute;
+            z-index: 1;
+            top: -520%;
+            right: -203%; /* To the left of the tooltip */
+            margin-left: 50px;
+            
+            /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+            opacity: 0;
+            transition: opacity 1s;
+            }
+
+            .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+            }
+         
+
+
+         
          
    </style>
 
@@ -160,32 +259,37 @@
 
    <!-- Header
    ================================================== -->
-   <section id="" class="forum" style="background-color: black;margin-bottom: 0px;padding-top: 170px;">
+   <section id="" class="forum" style="background-color: #3e3311;margin-bottom: 0px;padding-top: 170px;">
 
       <nav id="nav-wrap" style="background: black!important;">
-         <span href="" class="mobileonly">Logo</span>
-         <input type="text" placeholder="Search" class="mobileonly" style="margin-top: 5%;border-radius: 10px;">
+         <span href="" class="mobileonly" style="float: left!important;margin:20px 1% 5% 5%;max-width:50px"> <img src="images/profilepic.jpg" alt="Logo"></span>
+         <input type="text" placeholder="Search" class="mobileonly" style="float: left!important;margin-top: 20px;border-radius: 10px;margin-left: 10px;max-width: 40%;height: 50%;">
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation" style="margin-top:20px;margin-left:30px;background-color: black!important;">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation" style="margin-top:20px;margin-left:30px;background-color: black!important;">Hide navigation</a>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
          <br>
          <div class="mobileonly" >
-            <a href="viewclubs.html" style="color: #f8bd0f;">My Clubs</a>
+            <a href="{% url 'forum' club.id %}" style="color: white;margin-right: 10%;margin-left: 5%;font-size: larger;">CLUB <i class="fa fa-home" aria-hidden="true" style="color: #f8bd0f;"></i></a>
             <a href="" style="color: #f8bd0f;"></a>
 
-            
-            <a href="{% url 'insight' club.id %}" style="color: #f8bd0f;"> <button class="btn btn-success" type="submit" value="view insight">View Insight </button>
-            </a>
+            <a href="" style="color: white;margin-left: 10%;margin-right: 5%;font-size: larger;">Notifications <i class="fa fa-bell" aria-hidden="true" style="color: #f8bd0f;"></i></a>
 
 
          </div>
 
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
+         
+         <ul id="nav" class="nav" style="background:transparent">
             <li class=""><a class="" href="joinclub.html">Join Club</a></li>
+            <li ><a href="{% url 'insight' club.id %}">CLUB</a></li>
             <li ><a href="viewclubs.html">My Clubs</a></li>
 	         <li><a class="" href="notifications.html">Notifications</a></li>
-            <li class="current"><a class="" href="forum.html">Forum</a></li>
-            <li><a class="" href="insights.html">Insights</a></li>
+            <li class="current"><a class="" href="{% url 'forum' club.id %}">Forum</a></li>
+            <li><a class="" href="{% url 'insight' club.id %}">Insights</a></li>
 
             
          </ul> <!-- end #nav -->
@@ -193,25 +297,47 @@
       </nav> <!-- end #nav-wrap -->
       
 
-      <div class="row banner" style="margin-top: 30px!important;">
+      <div class="row banner" style="margin-top: 30px!important;padding-top: 40px;">
+         <!-- <br><br> -->
          <div class="banner-text" >
             <div style="float:left ;margin-left: 5%;text-align: left;">
                <h2 style="color: rgb(250, 240, 202);">{{ club.club_name }}</h2>
-            <h6 style="color: white;"><span style="font-size: small;"> Niche:</span> {{ club.niche }}</h6>
-            <div  style="float: right;">
-               <details>
-                  <summary>About Club</summary>
-                  <p>{{ club.about_club }}.</p>
-                </details>
+               <h6 style="color: white;"><span style="font-size: small;"> Niche:</span> {{ club.niche }}</h6>
+               <div  style="float: left;">
+                  <!-- <details>
+                     <summary>About Club</summary>
+                     <p>Epcot is a club at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+                  </details> -->
+                  {% with club.join.count as total_join %}
+                  <h5 style="color: white;"> <span style="text-align: left;color: #f8bd0f;">{{ total_join }}</span> <span style="font-size: small;"> Members</span></h5>
+                  {% endwith %}
+                  <div class="tooltip">
+                     <i class="fa fa-arrow-right" aria-hidden="true"></i>About Club 
+                    <span class="tooltiptext">
+                        {{ club.about_club }}
+                        </span>
+                  </div>
+                  </div>
+
+
+
+               </div>
+               
 
             </div>
-            {% with club.join.count as total_join %}
-            <h5 style="color: white;"> <span style="text-align: left;color: #f8bd0f;">
-                 {{ total_join }} </span> <span style="font-size: small;"> Members</span></h5>
-            {% endwith %}
+            <div >
+               {% if club.club_image %}
+               <span style="width:30%"><img src="{{ club.club_image.url }}" style="margin-left: 25%;width:30%;max-width: 180px;border-radius: 50%;border: 2px dashed goldenrod;" alt="" srcset=""></span>
+               {% endif %}
+               <br>
             </div>
-            
-            <h1 class="responsive-headline" style="color: #FAF0CA;">Forum</h1>
+            <br>
+            <div>
+               <a href="{% url 'insight' club.id %}" style="font-weight: bold;font-size: larger;float: left;padding-left: 8%;color: white;">Insights <i class="fa fa-lightbulb-o" aria-hidden="true" style="color: #f8bd0f;"></i> <span style="color:#f8bd0f">(5)</span> </a>
+               <a href="{% url 'forum' club.id %}" style="font-weight: bold;font-size: larger;float: right;padding-right: 8%;color: white;">Forum <i class="fa fa-comments-o" aria-hidden="true" style="color: #f8bd0f;"></i> <span style="color:#f8bd0f">(8)</span> </a>
+               <!-- <a href="forum.html" style="font-weight: bolder;font-size: larger;float: right;padding-right: 8%;">Forum <i class="fa fa-comments-o" aria-hidden="true"></i> (8)</a> -->
+            </div>
+            <!-- <h1 class="responsive-headline" style="color: #FAF0CA;">Forum</h1> -->
             
             <br>
             
@@ -219,34 +345,49 @@
       </div>
       
 
-      <p class="scrolldown">
+      <!-- <p class="scrolldown">
          <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
+      </p> -->
 
    </section> <!-- Header End -->
 
-   {% for cu in comm %}
-   <div class=" about" style="" id="about">
-      <h2 style="text-align: center;color: #f8bd0f;">Recent Forum Messages</h2>
+   <div class=" about"  id="" style="background: white!important;background-color: white!important;">
+
+      <div class=" about" style="background-color: #FAF0CA;padding-top: 26px;padding-bottom: 26px;" id="about">
+         <h2 style="text-align: center;">Recent Forum Messages</h2>
+      </div>
+   <!-- <div class=" about" style="" id="about"> -->
+      <!-- <h2 style="text-align: center;color: #f8bd0f;">Recent Forum Messages</h2> -->
+      {% for cu in comm %}
       <br>
       <div class="container">
-         <p> By "{{ cu.club.name}}" </p>
+         {% if club.club_image %}
+         <img src="{{ cu.club_image.url }}" alt="Avatar" style="width:100%;">
+         {% endif %}
+         <h4 >{{ cu.club.name}}</h4>
          <p>{{ cu.text }}</p>
          <span class="time-right">{{ cu.date_created }}</span>
-       </div>
-       
-    </div>
-    {% endfor %}
+      </div>
+      {% endfor %}
+      <br>
+
+   </div>
+<br>
+<br>
+
+
+
 
 
     
 
 
  </section> <!-- About Section End-->
+ <br>
 
    <!-- Call-To-Action Section
    ================================================== -->
-   <section id="call-to-action" style="padding-bottom: 200px;">
+   <section id="call-to-action" style="">
 
    
 
@@ -293,35 +434,36 @@
 
     <div class="row">
 
-       <div class="twelve columns">
+       <div class="twelve columns" style="background-color:black;border-radius:7px 7px 0px 0px;padding-top:5px;padding-bottom:3px;height: 70px;">
            
 
-          <ul class="social-links" style="display: inline-flexbox;">
-             <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-             <li><a href="#"><i class="fa fa-instagram"></i></a></li> -->
-             <li style="width: 50%;margin-top: 0px;" >
-                <form action="" method="POST">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <ul class="social-links" style="display: inline-flexbox;margin-top: 3px;;margin-bottom: 3px;">
                     
-                  {% csrf_token %}
-                  <input type="text" name="text" {% if form.is_bound %}value="{{ form.text.value }}"{% endif %} style="border-radius: 10px;min-width: 60%;" class="form-control" placeholder="Type here" aria-label="Search" aria-describedby="basic-addon1"/>
-                  <input id="commt" style="margin-bottom:0px" class="btn btn-success" type="submit" value="Add insight"/> 
-               </form>
+             
+             <li style="width: 50%;margin-top: 0px;" >
+                  <input type="text" name="text" {% if form.is_bound %}value="{{ form.text.value }}"{% endif %} style="border-radius: 10px;min-width: 60%;padding: 18px 2px;" class="form-control" placeholder="   Type here..." aria-label="Search" aria-describedby="basic-addon1"> 
              </li>
-             <li style="width:30%">   
-                 <br>     
-                 <br>     
-                 <i class="fa fa-paper-plane " style="color: #f8bd0f;"  aria-hidden="true"></i>
+             <!--<li style="width: 8%;margin-left: 5px;">
+               <i class="fa fa-camera" aria-hidden="true" style="color: goldenrod;"></i>
+             </li>
+             <li style="width: 8%;margin-left: 5px;">
+               <i class="fa fa-microphone" aria-hidden="true" style="color: goldenrod;"></i>
+             </li>-->
+             <li style="width:10%;margin-left: 5px;">   
+                 <button style="background:transparent" type="submit">
+                 <i class="fa fa-paper-plane fa-2x " style="color: #f8bd0f;"  aria-hidden="true"></i>
+                 </button>
              </li>
           </ul>
+        </form>
 
           
 
        </div>
 
-       <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+       <div id="go-top" style="margin-left: 25%;"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
 
     </div>
 
