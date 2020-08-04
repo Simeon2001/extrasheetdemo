@@ -89,14 +89,12 @@
          </div>
 
          <ul id="nav" class="nav" style="background:transparent">
-            <li class=""><a class="" href="joinclub.html">Join Club</a></li>
-             {% for clb in cj %}
-            <li ><a href="{% url 'insight' clb.id %}">CLUB</a></li>
-            <li ><a href="viewclubs.html">My Clubs</a></li>
-	         <li><a class="" href="notifications.html">Notifications</a></li>
-            <li class="current"><a class="" href="{% url 'forum' clb.id %}">Forum</a></li>
-            <li><a class="" href="{% url 'insight' clb.id %}">Insights</a></li>
-             {% endfor %}
+            <li class=""><a class="" href="{% url 'club' %}">Create Club</a></li>
+             
+            <li ><a href="{% url 'clubl' %}">CLUB</a></li>
+            <li ><a href="{% url 'club-join' %}">My Clubs</a></li>
+	         <li><a class="" href="#">Notifications</a></li>
+             
 
             
          </ul> <!-- end #nav -->

@@ -1,76 +1,367 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  {% block title %} <title>Extrasheet profile</title>{% endblock %}
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/profile.css' %}">
-</head>
 
-<body>
+<html lang="en">
+    <head>
+{% block title %} <title>Extrasheet profile</title>{% endblock %}
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
     
-<!-- multistep form -->
-<form action="" method="post" id="msform">
-  {% csrf_token %}
-  <!-- progressbar -->
-  <ul id="progressbar">
-    <li class="active">Profile 1</li>
-    <li>Profile 2</li>
-   <!-- <li>3</li>-->
-  </ul>
-  <!-- fieldsets -->
-  <fieldset>
-    <h2 class="fs-title">Create your profile</h2>
-    <h5>gg</h5>
+<link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/stylee.css' %}">
+      
+<link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/navbar.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/profiler.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/hover.css' %}">
+
+
+        
+    </head>
+    <body class="flow-text gen_fonts">
+        
+        
+        
+        
+        <!--------navbar------>
+        
+        
+        
+   
     
     
     
-    <h3 class="fs-subtitle">This is step 1</h3>
+<div class= 'row clubn white-text grey darken-4 namedd '>
+
+        <div class="col clubb s5">
+<span class='club'>
+    Club
+</span>
+<i class="material-icons clubi amber-text text-darken-3 fonts-style center prefix ">group</i>
+</div>
+
+   <div class=" notii col s7">
+<span class='notification'>
+    Notifications
+</span>
+<i class="material-icons notii amber-text text-darken-3 fonts-style center prefix ">notifications</i>
+</div>
+    </div>
+
+
+
+
+
+<!------end of navbar---->
+
+
+
+ 
+
+
+<!-------- set up profile header---->
     
-    <input type="file" name="profile_image" {% if form.is_bound %}value="{{ form.profile_image.value }}"{% endif %} accept="image/*" id="id_profile_image"/>
-    <input type="text" name="school_name" {% if form.is_bound %}value="{{ form.school_name.value }}"{% endif %}  placeholder="your school name" maxlength="30" required="" id="id_school_name"/>
     
-    <select name="gender" {% if form.is_bound %}value="{{ form.gender.value }}"{% endif %} id="id_gender">
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-      <option value="Others" selected="">Others</option>
-    </select>
-    <input type="text" name="major_courses" {% if form.is_bound %}value="{{ form.major_courses.value }}"{% endif %} placeholder="Your Major Courses if two use comma sign" maxlength="20" required="" id="id_major_courses"/>
-    <input type="text" name="minor_courses" {% if form.is_bound %}value="{{ form.minor_courses.value }}"{% endif %} placeholder="Your Minor courses if two use comma" maxlength="20" required="" id="id_minor_courses"/>
-    <input type="button" name="next" class="next action-button" value="Next" />
-  </fieldset>
+   <div id="container">
+
+
+<div class='container welcome'>
+            <div class=' welcome-text'>
+                Welcome<span class='grey-text
+                text-darken-4'>
+                 Johnson<span class="black-text">.</span><span class="amber-text text-darken-3"></span>
+                 
+                 
+                </span>
+            
+         
+            <div class="part-1">
+                Help your 
+                <span class="co amber-text text-darken-3">
+                    Coursemates
+                </span>and
+                <span class="co amber-text text-darken-3">
+                    Colleagues
+                </span> get to know you.....
+            </div>
+            </div>
+        </div>
+            
+            
+            
+            <!---------part 1----before profile page---->
+                
+                
+    <div  class='amber container main'>
+    <div class='body z-depth-4'>
+<div  class="container pic_container">
+                <input accept='image/*' hidden  type='file' id='inpfil'  class='inpfil' onchange='previewimage(event)' />
+
+                <div class="container profile_pict image-preview">
+                <img onClick='clickpic()' width = '100%' height= '100%' src = 'xx.png' alt= 'th' id='imag' />
+               <i  onClick='clickpic()' class="logo medium 
+               gbutto tiny material-icons prefix">add_a_photo</i>
+               <i class='coverr medium material-icons'>fiber_manual_record</i>
+                </div>
+            </div>
+            
+<div class='container'>
+    <div class='namer grey-text text-darken-4'>
+        Olamide johnson
+    </div>
+</div>
+    
+ 
+
+
+</div>
+
+    
+    </div>
+ 
+
+<div class="container  p2">
+    <div class="container part-2">
+ This info will be used to help recommend and connect you to relevant clubs and communities created by your lecturers and students in the same program as you
+    </div>
+   
+</div>
+
+ 
+   <div class='container persona'>
+ <a href='#second_container' id = 'first' class='btn waves-effect waves-white amber darken-2
+ submi'>
+ 
+      Set My Personal Info
+  <i class='sett  medium material-icons'>
+       settings
+       
+   </i>
+    </a>
+    
+    </div>
+ 
+ 
+ <!--------Profile part 1----->
+ 
+ 
+ 
+    
+    </div>
+    </div>
+    <div class='container'>
+        
+<div id= "head_container" hidden class= 'white-text grey darken-4 name'>
+        <div>Set up your profile</div>
+    </div>
+    </div>
+
+    
+
+ <div hidden id = 'second_container' class=' container main_container'>
+
+    <form action="" method="POST">
+       {% csrf_token %}
+        <fieldset class='formm z-depth-4'>
+            <div class="container pic_container">
+                <input name="profile_image" {% if form.is_bound %}value="{{ form.profile_image.value }}"{% endif %} accept='image/*' hidden  type='file' id='inpfil'  class='inpfil' onchange='previewimage(event)' />
+
+                <div class="container profile_pict image-preview">
+                <img onClick='clickpic()' width = '100%' height= '100%' src =  'xx.png' alt='profile' id='image' />
+ 
+               <i  onClick='clickpic()' class="logo medium 
+               gbutton material-icons prefix">add_a_photo</i>
+ <i class=' amber-text cover medium material-icons prefix'>fiber_manual_record</i>
+
+                </div>
+            </div>
+            
+            <div class='input-field'>
+                <i class="material-icons prefix ">
+                     school
+                    </i>
+               <label class='htmlfor' htmlFor='school_name'>School Name</label>
+                <input type='text' name="school_name" {% if form.is_bound %}value="{{ form.school_name.value }}"{% endif %} id='school_name'  />
+            </div>
+          
+            <div class='input-field'>
+                <i class="material-icons prefix">group</i>
+               <label class='htmlfor' htmlFor='gender'>Gender</label>
+                <select name="gender" {% if form.is_bound %}value="{{ form.gender.value }}"{% endif %} id="id_gender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Others" selected="">Others</option>
+                </select>
+            </div>
+            <div class='input-field'>
+                <i class="material-icons prefix">hdr_strong</i>
+               <label class='htmlfor' htmlFor='major_c'>Major courses</label>
+                <input name="major_courses" {% if form.is_bound %}value="{{ form.major_courses.value }}"{% endif %}  class="tooltipped" data-position='top'
+                data-tooltip='Please seperate each input with a comma. Example (Statistics, Politics)'
+                type='text' id='major_c' />
+            </div>
+            <div class='input-field'>
+                <i class="material-icons prefix">hdr_weak</i>
+               <label class='htmlfor' htmlFor='minor_c'>Minor courses</label>
+                <input name="minor_courses" {% if form.is_bound %}value="{{ form.minor_courses.value }}"{% endif %} class="tooltipped" data-position='top'
+                data-tooltip='Please seperate each input with a comma. Example (Engineering, Finance)'
+                type='text' id='minor_c' />
+            </div>
+            <div class='next-div center-align input-field' >
+                <a href='#third_container' id='second' class='z-depth-3 next waves-effect waves-red  darken-2 btn white-text amber z-depth-0'>Next
+          
+                </a>  </div>
+            
+        
+    
+                
+            </div>
+            
+        </fieldset>   
+            
+            
+            
+            
+            
+            <!--------Profile part 2---->
+            
+            
+            
+        <div hidden id = 'third_container' class='container third_container main_container'>
+    
+    <fieldset class='formm z-depth-4'  >
+        <div class='input-field'>
+            <i class="material-icons prefix ">
+                school
+               </i>
+            <select multiple>
+                <option value="1">Religion</option>
+                <option value="2">Music</option>
+                <option value="3">Marriage</option>
+                <option value="3">Technology</option>
+                <option value="3">Movies</option>
+              </select>
+              <label>Select your personal interests</label>
+        </div>
+        <div class='input-field'>
+            <i class="material-icons prefix ">
+                 school
+                </i>
+           <label class='htmlfo' htmlFor='sh'>Skills you have</label>
+            <input name="skills_you_have" {% if form.is_bound %}value="{{ form.skills_you_have.value }}"{% endif %} class="tooltipped" data-position='top'
+            data-tooltip='Please seperate each input with a comma. Example (Programming, Dancing)'
+            type='text' id='sh'  />
+        </div>
+        <div class='input-field'>
+            <i class="material-icons prefix">watch_later</i>
+           <label class='htmlfoo' htmlFor='su'>Skills you like to have</label>
+            <input name="skills_you_like_to_have" {% if form.is_bound %}value="{{ form.skills_you_like_to_have.value }}"{% endif %} class="tooltipped" data-position='top'
+             data-tooltip='Please seperate each input with a comma. Example (Photography, Singing)'
+              exitDelay=5 type='text' id='su'  />
+        </div>
+        <div class='input-field'>
+            <i class="material-icons prefix">group</i>
+           <label class='html' htmlFor='h'>Hobbies</label>
+            <input name="hobbies" {% if form.is_bound %}value="{{ form.hobbies.value }}"{% endif %} class="tooltipped" data-position='top' 
+            data-tooltip='Please seperate each input with a comma. Example (Gaming, Reading)'
+            type='text' id='h' />
+        </div>
+        <div class='input-field'>
+            <i class="material-icons prefix">hdr_strong</i>
+           <label class='htmlfo' htmlFor='sl'>Spoken Languages</label>
+            <input name="spoken_languages" {% if form.is_bound %}value="{{ form.spoken_languages.value }}"{% endif %} class="tooltipped" data-position='top'
+            data-tooltip='Please seperate each input with a comma. Example (English, Yoruba)'
+             type='text' id='sl' />
+        </div>
+        <div class='input-field'>
+            <i class="material-icons prefix">hdr_weak</i>
+           <label class='htmlfo' htmlFor='hr'>Heroes or Role models</label>
+            <input name="heros_or_rolemodels" {% if form.is_bound %}value="{{ form.heros_or_role_models.value }}"{% endif %} class="tooltipped" data-position='bottom'
+            data-tooltip='Please seperate each input with a comma. Example (Superman, Thor)'
+            type='text' id='hr' />
+        </div>
+        <div class='  next-div input-field'>
+   
+            <a href='#second_container' id ='third' class='nextt        btn waves-effect waves-blue white-text amber darken-2 z-depth-0'>Back
+      
+            </a>
+            <button type="submit">save</button>
+        </div>
+         
+            <!--<div class='next-div cont center-align input-field' >
+                <button type="submit" class='z-depth-3 pulse next waves-effect waves-light  darken-2 btn white-text amber z-depth-0'>save</button>  
+                
+            </div>-->
+
+        
+        
+    </fieldset>
+            </div>
+        
+    </form>
+    </body>
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <script type='text/javascript'></script>
+ <script src="{% static 'extrasheet/scripts/main.js' %}"></script>
+ <script type='text/javascript'>
+
+ 
+ 
+   $(document).ready(function(){
+    $('.tooltipped').tooltip();
+    
+    $('select').formSelect();
+    
+    $('#first').click( function(){
+        $('#container').hide()
+        $('#second_container').show()
+        $('#head_container').show()
+    }
+    )
+    
+    $('#second').click( function() {
+        $('#second_container').hide()
+        $('#third_container').show()
+    
+        
+    }
+        )
+        
+    $('#third').click( function() {
+        $('#third_container').hide()
+        $('#second_container').show()
+    }
+    )
+$('.next').click(function(e) {
+    e.preventDefault();
+});
+   
+   
+
+});
+   function previewimage(event){
+  var reader = new FileReader();
+  var image = document.getElementById('image')
+  reader.onload = function(){
+  if (reader.readyState == 2) {
+  image.src = reader.result
+  }
+  }
   
- <!-- <fieldset>
-    <h2 class="fs-title">Social Profiles</h2>
-    <h3 class="fs-subtitle">Your presence on the social network</h3>
-    <input type="text" name="twitter" placeholder="Twitter" />
-    <input type="text" name="facebook" placeholder="Facebook" />
-    <input type="text" name="gplus" placeholder="Google Plus" />
-    <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <input type="button" name="next" class="next action-button" value="Next" />
-  </fieldset>-->
+  reader.readAsDataURL(event.target.files[0])
+}
+function clickpic(){
+var stat = document.getElementById('inpfil')
+stat.click()
+}
   
-  <fieldset>
-    <h2 class="fs-title">Create your Profile</h2>
-    <h3 class="fs-subtitle">Step 2</h3>
-    <select name="personal_interest" required="" id="id_personal_interest">
-        <option value="" selected="">---------</option>
-        <option value="Science">Science</option>
-        <option value="Technology">Technology</option>
-        <option value="Entertainment">Entertainment</option>
-    </select>
-    <input type="text" name="skills_you_have" {% if form.is_bound %}value="{{ form.skills_you_have.value }}"{% endif %} placeholder="skills you have, if two use comma " maxlength="40" required="" id="id_skills_you_have"/>
-    <input type="text" name="skills_you_like_to_have" {% if form.is_bound %}value="{{ form.skills_you_like_to_have.value }}"{% endif %} maxlength="30" placeholder="skills you dont have, if two use comma" required="" id="id_skills_you_like_to_have"/>
-    <input type="text" name="hobbies" {% if form.is_bound %}value="{{ form.hobbies.value }}"{% endif %} maxlength="30"  placeholder="hobbies if two use comma" required="" id="id_hobbies"/>
-    <input type="text" name="spoken_languages" {% if form.is_bound %}value="{{ form.spoken_languages.value }}"{% endif %} maxlength="30"  placeholder="hobbies if two use comma" required="" id="id_spoken_languages"/>
-    <input type="text" name="heros_or_rolemodels" {% if form.is_bound %}value="{{ form.heros_or_role_models.value }}"{% endif %} maxlength="30" placeholder="heroes or role models" required="" id="id_heros_or_rolemodels"/>
-    <input type="button" name="previous"  class="previous action-button" value="Previous" />
-    <input type="submit" name="submit" class="submit action-button" value="Submit" />
-  </fieldset>
-</form>
-<script src="{% static 'extrasheet/scripts/jquery.min.js' %}"></script>
-<script src="{% static 'extrasheet/scripts/profile.js' %}"></script>
-<script src="{% static 'extrasheet/scripts/jquery.easing.min.js' %}"></script>
-</body>
-</html>
+    </script>
+    </html>

@@ -9,18 +9,110 @@
       height: 53px;
       text-align center;
       padding: 10 0 65 0;
-  }
-  
-  .menus {
-      font-size: 40px;
       
   }
+  
+  .menuss {
+      font-size: 40px;
+      
+      
+  }
+  
+  a.menus {
+      float: right;
+  }
+  a.extext {
+      float: left;
+      margin: -10 0 0 0;
+      padding: 10 20 0 20;
+      height: 79.536228px
+      
+  }
+  a.extextt {
+      float: left;
+      margin: -10 0 0 0;
+      padding: 10 20 0 20;
+      height: 79.536228px;
+      width: 18rem;
+     
+      
+  }
+  .searchit::placeholder {
+      color: grey;
+  }
+  
+  div.search {
+      float: right;
+    border-bottom: 2px solid orange;
+    max-width: 150px;
+     height: 47px;
+     padding: 4 19 0 0;
+     box-sizing: border-box;
+    
+     margin: 4 2rem 0 0;
+      
+  }
+  
+  div.searchh {
+      float: left;
+    border-bottom: 2px solid orange;
+     min-width: 170px;
+     height: 47px;
+     padding: 4 19 0 0;
+     box-sizing: border-box;
+    
+     margin: 4 3rem 0 0;
+      
+  }
+  input.searchit {
+      color: black !important;
+  }
+  div.search:hover,div.searchh:hover {
+      border-color: grey;
+  }
+  i.search-logo {
+      font-size: 27px !important;
+      margin: -13 0 0 0;
+  }
+input[type='text']:not(.browser-default):focus:not([readonly]) {
+    border-color: grey;
+}
+input[type='text']:not(.browser-default) {
+border-color: orange;
+
+}
+a.menus {
+
+
+}
+i.menuu {
+    font-size: 60px !important;
+    
+}
+i.menuu:hover {
+    color: grey !important;
+}
+  input.searchit  {
+      
+      color : red;
+  }
   a.menu {
-font-family:times;
+font-family: "Comic sans ms";
 letter-spacing: 2px;
 font-weight: 900;
+border-right: 5px solid #daa520
+
+ 
+  }
+  
+  a.menuuu {
+font-family: "Comic sans ms";
+letter-spacing: 5px;
+font-weight: 900;
+border-right: 5px solid #daa520
 
   }
+
 
   .insta , .twi {
     font-weight: bolder;
@@ -52,3 +144,56 @@ font-weight: 900;
     margin-bottom: 30px;
   }
   
+.long {
+
+   max-width: 10px;
+   min-height: 60px;
+}
+
+
+.clubn {
+    background: red;
+
+    width: 100px;
+    box-sizing: border-box !important;
+}
+.club {
+    margin: 0 0 0 -27;
+    
+}
+.clubb {
+    margin: -13 2 -20 -5 !important;
+    padding: 10 0 18 30 !important;
+}
+
+.notii {
+    margin: -13 -26-20 6 !important;
+    padding: 10 20 20 8 !important;
+    
+}
+
+i.clubi {
+    position: relative;
+    top: 5px;
+    left:0px;
+}
+
+i.notii {
+    position: relative;
+    top: 6px;
+    left:-9px;
+}
+
+a.menu-large {
+    
+font-family:times;
+letter-spacing: 4px;
+font-weight: 900;
+
+
+}
+
+li.contact {
+    border-right: 16px solid black;
+
+}

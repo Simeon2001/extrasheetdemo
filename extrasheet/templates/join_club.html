@@ -77,14 +77,12 @@
 
          
          <ul id="nav" class="nav" style="background:transparent">
-            <li class=""><a class="" href="{% url 'clubl' %}">Join Club</a></li>
-             {% for cl in c %}
-            <li ><a href="{% url 'insight' cl.id %}">CLUB</a></li>
+            <li class=""><a class="" href="{% url 'club' %}">Create Club</a></li>
+             
+            <li ><a href="{% url 'clubl' %}">CLUB</a></li>
             <li ><a href="{% url 'club-join' %}">My Clubs</a></li>
-	         <li><a class="" href="notifications.html">Notifications</a></li>
-            <li class="current"><a class="" href="{% url 'forum' cl.id %}">Forum</a></li>
-            <li><a class="" href="{% url 'insight' cl.id %}">Insights</a></li>
-             {% endfor %}
+	         <li><a class="" href="#">Notifications</a></li>
+             
 
             
          </ul> <!-- end #nav -->
@@ -211,7 +209,7 @@
          <div class="twelve columns" style="background-color:black;border-radius:7px 7px 0px 0px;padding-top:5px;padding-bottom:3px;height: 70px;">
              
   
-            <ul class="social-links" style="display: inline-flexbox;margin-top: 3px;;margin-bottom: 3px;">
+          <!--  <ul class="social-links" style="display: inline-flexbox;margin-top: 3px;;margin-bottom: 3px;">
                
                <li style="width: 50%;margin-top: 0px;" >
                     <input type="text" style="border-radius: 10px;min-width: 60%;padding: 18px 2px;" class="form-control" placeholder="   Type here..." aria-label="Search" aria-describedby="basic-addon1"> 
@@ -225,13 +223,13 @@
                <li style="width:10%;margin-left: 5px;">   
                    <i class="fa fa-paper-plane fa-2x " style="color: #f8bd0f;"  aria-hidden="true"></i>
                </li>
-            </ul>
+            </ul>-->
   
             
   
          </div>
   
-         <div id="go-top" style="margin-left: 25%;"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+         <div id="go-top" style="margin-left: 25%;"><a class="smoothscroll" title="Back to Top" href="#home"><i class="fa fa-up-open"></i></a></div>
   
       </div>
   
