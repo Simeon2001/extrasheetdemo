@@ -21,10 +21,16 @@
             {% csrf_token %}
             <div id="logl">
             <label  for="Email/Username">Email or Username:</label><br><br>
+            {% for err in form.username.errors %}
+                <small style="color:red" class="text-danger ml-2">{{ err }}</small><br>
+            {% endfor %}
                 <input id="logi" type="email/text" name="username" {% if form.is_bound %}value="{{ form.username.value }}"{% endif %} placeholder="Email or Username" required="required">
             </div><br><br>
             <div id="logl">
                 <label for="Password">Password:</label><br><br>
+                {% for err in form.password.errors %}
+                <small class="text-danger ml-2">{{ err }}</small><br>
+                {% endfor %}
                 <input id="logi" type="password" name="password" {% if form.is_bound %}value="{{ form.password.value }}"{% endif %} placeholder="password" required="required">
             </div>
             <div class="logb">
