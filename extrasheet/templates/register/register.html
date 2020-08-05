@@ -47,7 +47,7 @@
                 <small style"color:red" id="redd">{{ err }}</small><br>
             {% endfor %}
             </br>
-            <input type="datetime" name="date_of_birth" {% if form.is_bound %}value="{{ form.date_of_birth.value }}"{% endif %} placeholder="mm-dd-yyyy" required="required">
+            <input type="datetime" name="date_of_birth" {% if form.is_bound %}value="{{ form.date_of_birth.value }}"{% endif %} placeholder="mm/dd/yyyy" required="required">
             <label for="Mobile Number">Mobile Number</label><br><br>
             {% for err in form.mobile_number.errors %}
                 <small style"color:red" id="redd">{{ err }}</small><br>
