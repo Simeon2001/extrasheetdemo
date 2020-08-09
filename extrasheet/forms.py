@@ -22,7 +22,12 @@ class ForumForm (forms.ModelForm) :
     
     class Meta :
         model = Club_fo
-        fields=('text',)
+        
+        fields=('name','text',)
+        def form_valid(self, form): # new
+          form.instance.name = self.request.user
+          return super().form_valid(form)
+        
         
 class InsightForm (forms.ModelForm) :
     

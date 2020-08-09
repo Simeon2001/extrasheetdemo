@@ -2,75 +2,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% block title %} <title>Extrasheet profile</title>{% endblock %}
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/profile.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/materialize.min.css' %}">
+  
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/pro.css' %}">
 </head>
-
 <body>
+  <nav class="nav-extended">
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#test1">Club</a></li>
+        <li class="tab"><a class="active" href="#test2">Notification</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="app">
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+    <fieldset>
     
-<!-- multistep form -->
-<form action="" method="post" id="msform">
-  {% csrf_token %}
-  <!-- progressbar -->
-  <ul id="progressbar">
-    <li class="active">Profile 1</li>
-    <li>Profile 2</li>
-   <!-- <li>3</li>-->
-  </ul>
-  <!-- fieldsets -->
-  <fieldset>
-    <h2 class="fs-title">Create your profile</h2>
-    <h5>gg</h5>
+      <div class="container">
+        <h3 class="header_main">Welcome Simeon</h3>
+        <p class="parag">Help Your <span class="oo">Classmates</span> And <span class="oo">Colleagues</span> Get To Know You More ......</p>
+        </div>
+        <div class="amber show_first darken-3 container">
+        <div class="first_profile z-depth-4">
+        <h4 class= "container profile_header">Create Your Profile </h4>
+     
+      <div class="container first_container">
+      <div class="row ">
+        <div class="file-field input-field">
+          <div class="btn amber darken-3">
+            <span>File</span>
+            <input id="image" type="file" name="profile_image" {% if form.is_bound %}value="{{ form.profile_image.value }}"{% endif %} accept="image/*" id="id_profile_image" class=" validate"/>
+          </div>
+          <div class = " file-path-wrapper">
+                     <input class = "file-path validate" type = "text"
+                        placeholder = "Upload a profile picture" />
+                  </div>
+        </div>
+      </div>  
+      
+      
+      <div class="row">
+        <div class="input-field col s12">
+ <i class="material-icons prefix">school</i>
+          <input type="text" name="school_name" {% if form.is_bound %}value="{{ form.school_name.value }}"{% endif %}  placeholder="Your school name" maxlength="30" required="" id="id_school_name" class="validate"/>
+        </div>
+      </div>
+      
     
+      <select name="gender" {% if form.is_bound %}value="{{ form.gender.value }}"{% endif %} id="id_gender">
+          
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Others" disabled selected="">Gender</option>
+        </select>
+        
+        
+      
+      <div class="row">
+        <div class="input-field col s12">
+ <i class="material-icons prefix">hdr_weak</i>
+
+          <input type="text" name="major_courses" {% if form.is_bound %}value="{{ form.major_courses.value }}"{% endif %} placeholder="Your Major Course...if two use comma sign" maxlength="20" required="" id="id_major_courses"/>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+ <i class="material-icons prefix">hdr_weak</i>
+
+          <input type="text" name="minor_courses" {% if form.is_bound %}value="{{ form.minor_courses.value }}"{% endif %} placeholder="Your Minor courses...if two use comma sign" maxlength="20" required="" id="id_minor_courses"/>
+        </div>
+      </div>
+      
+      <div class="row center-align">
+        <div class="input-field col s12">
+ <i class="material-icons prefix">hdr_weak</i>
+
+          <input @click.prevent="next()" type="button" name="next" class=" next_button next action-button btn waves-effect waves-light ww amber darken-3 btn-large" value="Next" />
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </fieldset>
+
     
-    
-    <h3 class="fs-subtitle">This is step 1</h3>
-    
-    <input type="file" name="profile_image" {% if form.is_bound %}value="{{ form.profile_image.value }}"{% endif %} accept="image/*" id="id_profile_image"/>
-    <input type="text" name="school_name" {% if form.is_bound %}value="{{ form.school_name.value }}"{% endif %}  placeholder="your school name" maxlength="30" required="" id="id_school_name"/>
-    
-    <select name="gender" {% if form.is_bound %}value="{{ form.gender.value }}"{% endif %} id="id_gender">
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-      <option value="Others" selected="">Others</option>
-    </select>
-    <input type="text" name="major_courses" {% if form.is_bound %}value="{{ form.major_courses.value }}"{% endif %} placeholder="Your Major Courses if two use comma sign" maxlength="20" required="" id="id_major_courses"/>
-    <input type="text" name="minor_courses" {% if form.is_bound %}value="{{ form.minor_courses.value }}"{% endif %} placeholder="Your Minor courses if two use comma" maxlength="20" required="" id="id_minor_courses"/>
-    <input type="button" name="next" class="next action-button" value="Next" />
-  </fieldset>
+    <fieldset v-if="step===2">
   
- <!-- <fieldset>
-    <h2 class="fs-title">Social Profiles</h2>
-    <h3 class="fs-subtitle">Your presence on the social network</h3>
-    <input type="text" name="twitter" placeholder="Twitter" />
-    <input type="text" name="facebook" placeholder="Facebook" />
-    <input type="text" name="gplus" placeholder="Google Plus" />
-    <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <input type="button" name="next" class="next action-button" value="Next" />
-  </fieldset>-->
-  
-  <fieldset>
-    <h2 class="fs-title">Create your Profile</h2>
-    <h3 class="fs-subtitle">Step 2</h3>
-    <select name="personal_interest" required="" id="id_personal_interest">
+    <div hidden class="amber show_second darken-3 container">
+        <div class="first_profile z-depth-4">
+        <h4 class="container profile_header">Final stage...</h4>    <div class"container first_container">
+      <div class="row">
+        <div class="input-field col s12">
+ <i class="material-icons prefix">group_work</i>
+
+          <input type="text" name="personal_interest" id="autocomplete-input" class="autocomplete" placeholder="choose Personal Interest"/>
+         <!-- <label>Personal interest</label>
+          </br>
+          <select name="personal_interest" required="" id="id_personal_interest">
         <option value="" selected="">---------</option>
         <option value="Science">Science</option>
         <option value="Technology">Technology</option>
         <option value="Entertainment">Entertainment</option>
-    </select>
-    <input type="text" name="skills_you_have" {% if form.is_bound %}value="{{ form.skills_you_have.value }}"{% endif %} placeholder="skills you have, if two use comma " maxlength="40" required="" id="id_skills_you_have"/>
-    <input type="text" name="skills_you_like_to_have" {% if form.is_bound %}value="{{ form.skills_you_like_to_have.value }}"{% endif %} maxlength="30" placeholder="skills you dont have, if two use comma" required="" id="id_skills_you_like_to_have"/>
-    <input type="text" name="hobbies" {% if form.is_bound %}value="{{ form.hobbies.value }}"{% endif %} maxlength="30"  placeholder="hobbies if two use comma" required="" id="id_hobbies"/>
-    <input type="text" name="spoken_languages" {% if form.is_bound %}value="{{ form.spoken_languages.value }}"{% endif %} maxlength="30"  placeholder="hobbies if two use comma" required="" id="id_spoken_languages"/>
-    <input type="text" name="heros_or_rolemodels" {% if form.is_bound %}value="{{ form.heros_or_role_models.value }}"{% endif %} maxlength="30" placeholder="heroes or role models" required="" id="id_heros_or_rolemodels"/>
-    <input type="button" name="previous"  class="previous action-button" value="Previous" />
-    <input type="submit" name="submit" class="submit action-button" value="Submit" />
-  </fieldset>
-</form>
-<script src="{% static 'extrasheet/scripts/jquery.min.js' %}"></script>
-<script src="{% static 'extrasheet/scripts/profile.js' %}"></script>
-<script src="{% static 'extrasheet/scripts/jquery.easing.min.js' %}"></script>
+      </select>-->
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+ <i class="material-icons prefix">keyboard</i>
+
+          <input type="text" name="skills_you_have" {% if form.is_bound %}value="{{ form.skills_you_have.value }}"{% endif %} placeholder="skills you have, if two use comma " maxlength="40" required="" id="id_skills_you_have"/>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+ <i class="material-icons prefix">laptop_mac</i>
+
+          <input type="text" name="skills_you_like_to_have" {% if form.is_bound %}value="{{ form.skills_you_like_to_have.value }}"{% endif %} maxlength="30" placeholder="skills you dont have, if two use comma" required="" id="id_skills_you_like_to_have"/>
+        </div>
+      <div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+ <i class="material-icons prefix">insert_emoticon</i>
+
+          <input type="text" name="hobbies" {% if form.is_bound %}value="{{ form.hobbies.value }}"{% endif %} maxlength="30"  placeholder="hobbies if two use comma" required="" id="id_hobbies"/>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+ <i class="material-icons prefix">language</i>
+
+          <input type="text" name="spoken_languages" {% if form.is_bound %}value="{{ form.spoken_languages.value }}"{% endif %} maxlength="30"  placeholder="Spoken languages if two use comma" required="" id="id_spoken_languages"/>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+ <i class="material-icons prefix">landscape</i>
+
+          <input type="text" name="heros_or_rolemodels" {% if form.is_bound %}value="{{ form.heros_or_role_models.value }}"{% endif %} maxlength="30" placeholder="heroes or role models" required="" id="id_heros_or_rolemodels"/>
+        </div>
+      </div>
+      
+      
+        
+      <div class="row center-align">
+        <div class="input-field col s12">
+ 
+
+          <input @click.prevent="prev()" type="button" name="previous"  class="previous action-button btn waves-effect waves-light ww amber back_button darken-3 btn-large" value="Previous" />
+        </div>
+      </div>
+      
+      <div class="row center-align">
+        <div class="input-field col s12">
+ 
+
+          <input type="submit" name="submit" class="submit action-button amber darken-3 btn waves-effect waves-light btn-large white-text" value="Submit" />
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </fieldset>
+    </form>
+  </div>
+  <script src="{% static 'extrasheet/scripts/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'extrasheet/scripts/materialize.min.js' %}"></script>
+  
+  <script type='text/javascript'>
+  $(document).ready(function(){
+ $('.next_button').click( function() {
+        $('.show_first').hide()
+        $('.show_second').show()
+    }
+    )
+    
+ $('.back_button').click( function() {
+        $('.show_second').hide()
+        $('.show_first').show()
+    }
+    )
+    
+    
+      
+    $('select').formSelect();
+    $('input.autocomplete').autocomplete({
+      data: {
+        "Technology": null,
+        "Programming": null,
+        "Entertainment":null,
+        "Body care":null,
+        "Fashion":null,
+        "Gaming":null,
+        "Computer":null,
+        "Business":null,
+        "Design":null,
+        "Sport":null,
+        "Health":null,
+        "Movies":null,
+        "Education":null,
+        "Innovation":null,
+        "Drawing":null,
+        "Animals":null,
+        "Nature":null,
+        "Photography":null,
+        "Gadget":null,
+        "Science":null,
+      },
+    });
+  });
+  
+  
+  </script>
+  
+  
 </body>
-</html>

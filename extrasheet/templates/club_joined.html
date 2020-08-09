@@ -29,8 +29,11 @@
 
    <!-- Favicons
 	================================================== -->
-   <link rel="shortcut icon" href="{% static 'extrasheet/style/favicon.png' %}" >
+   <link rel="shortcut icon" href="{% static 'extrasheet/img/favicon.png' %}" >
    <style>
+    section #created {
+       margin-bottom:10em;
+     }
       .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -120,7 +123,7 @@
       <h1 class="responsive-headline" style="color: #FAF0CA;">  My Clubs</h1>
    </section>
    
-   <section id="about">
+   <section style="margin-up:5em" id="about">
        
       {% for clb in cj %}
       <div class="row">
@@ -161,7 +164,48 @@
       {% endfor %}
 
    </section> <!-- About Section End-->
+   <section style="background-color: #866726a6; padding-bottom:10em;" id="created">
+      
+      <h1 class="responsive-headline" style="color: white; background-color: blue;">Club Created By {{ user.username }}</h1>
+      {% for clb in cx %}
+      <div class="row">
+         
 
+         <div class="three columns">
+            {% if clb.club_image %}
+            <img class="profile-pic"  src="{{clb.club_image.url}}" alt="" />
+            {% endif %}
+
+         </div>
+
+         <div class="nine columns main-col">
+
+            <h2>{{ clb.club_name }}</h2>
+
+            <p>{{ clb.about_club }}
+            </p>
+
+            <div class="row">
+
+               <div class="columns contact-details">
+
+               </div>
+
+               <div class="columns download" style="margin-right: 30px;">
+                  <p>
+                    <a href="{% url 'insight' clb.id %}" class="button" ><i class="fa fa-sign-in"></i>VIEW
+                    </a>
+                  </p>
+               </div>
+
+            </div> <!-- end row -->
+
+         </div> <!-- end .main-col -->
+
+      </div>
+      {% endfor %}
+
+   </section>
    <!-- Call-To-Action Section
    ================================================== -->
    <section id="call-to-action" style="">

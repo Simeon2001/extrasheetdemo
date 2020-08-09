@@ -1,0 +1,47 @@
+.storm-large:hover {
+    color: violet;
+  }
+
+  .s:hover {
+      color: red;
+  }
+
+  .t:hover {
+    color: yellow;
+}
+
+.o:hover {
+    color: green;
+}
+
+.r:hover {
+    color: palevioletred;
+}
+
+.m:hover {
+    color: yellowgreen
+}
+
+.f:hover {
+    color: orange;
+}
+
+.o:hover {
+    color: tomato;
+}
+
+.oo:hover {
+    color: red;
+}
+
+.d:hover {
+    color: orangered;
+}
+
+.s:hover {
+    color: mediumspringgreen;
+}
+
+ .menu-big:hover {
+    background-color: black;
+}

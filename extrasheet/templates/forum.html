@@ -363,7 +363,7 @@
          {% if club.club_image %}
          <img src="{{ cu.club_image.url }}" alt="Avatar" style="width:100%;">
          {% endif %}
-         <h4 >{{ cu.club.name}}</h4>
+         <h4 >{{ cu.name}}</h4>
          <p>{{ cu.text }}</p>
          <span class="time-right">{{ cu.date_created }}</span>
       </div>
@@ -373,6 +373,7 @@
    </div>
 <br>
 <br>
+
 
 
 
@@ -438,10 +439,13 @@
 
         <form action="" method="POST">
           {% csrf_token %}
+          
           <ul class="social-links" style="display: inline-flexbox;margin-top: 3px;;margin-bottom: 3px;">
                     
              
              <li style="width: 50%;margin-top: 0px;" >
+                  <input type="hidden" name="name" {% if form.is_bound %}value="{{ form.name.value }}"{% endif %} value="{{ user.id }}"/> 
+                  
                   <input type="text" name="text" {% if form.is_bound %}value="{{ form.text.value }}"{% endif %} style="border-radius: 10px;min-width: 60%;padding: 18px 2px;" class="form-control" placeholder="   Type here..." aria-label="Search" aria-describedby="basic-addon1"> 
              </li>
              <!--<li style="width: 8%;margin-left: 5px;">

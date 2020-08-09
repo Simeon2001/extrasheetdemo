@@ -101,6 +101,7 @@ class Club_in (models.Model):
 #club_forum
 class Club_fo (models.Model):
     club = models.ForeignKey(Club, null=True,on_delete=models.CASCADE,related_name='club_comment')
+    name = models.ForeignKey(User,on_delete=models.CASCADE,related_name='forum_name',default=1)
     text = models.TextField(max_length=1000)
     
     date_created= models.DateTimeField(auto_now_add=True,null=True)

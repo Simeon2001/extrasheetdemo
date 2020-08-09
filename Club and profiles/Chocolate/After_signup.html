@@ -1,8 +1,8 @@
-{% load static %}
+
 
 <html lang="en">
     <head>
-{% block title %} <title>Extrasheet profile</title>{% endblock %}
+<title>Extrasheet profile</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,13 +14,13 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
     
-<link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/stylee.css' %}">
+<link rel="stylesheet" type="text/css" href="">
       
-<link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/navbar.css' %}">
+<link rel="stylesheet" type="text/css" href="">
 
-<link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/profiler.css' %}">
+<link rel="stylesheet" type="text/css" href="">
 
-<link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/hover.css' %}">
+<link rel="stylesheet" type="text/css" href="">
 
 
         
@@ -105,18 +105,20 @@
                 <input accept='image/*' hidden  type='file' id='inpfil'  class='inpfil' onchange='previewimage(event)' />
 
                 <div class="container profile_pict image-preview">
-                <img onClick='clickpic()' width = '100%' height= '100%' src = 'xx.png' alt= 'th' id='imag' />
+                <img onClick='clickpic()' width = '100%' height= '50%' src = 'xx.png' alt= 'th' id='imag' />
                <i  onClick='clickpic()' class="logo medium 
                gbutto tiny material-icons prefix">add_a_photo</i>
-               <i class='coverr medium material-icons'>fiber_manual_record</i>
+               <i class='cover medium material-icons'>fiber_manual_record</i>
+
+               <div class='namer grey-text text-darken-4'>
+                Olamide johnson
+            </div>
+            <br>
                 </div>
             </div>
             
-<div class='container'>
-    <div class='namer grey-text text-darken-4'>
-        Olamide johnson
-    </div>
-</div>
+    
+
     
  
 
@@ -125,7 +127,7 @@
 
     
     </div>
- 
+ <br>
 
 <div class="container  p2">
     <div class="container part-2">
@@ -133,9 +135,9 @@
     </div>
    
 </div>
-
+<br>
  
-   <div class='container persona'>
+   <div class='persona' style="margin: 0 auto; text-align: center;">
  <a href='#second_container' id = 'first' class='btn waves-effect waves-white amber darken-2
  submi'>
  
@@ -148,7 +150,7 @@
     
     </div>
  
- 
+ <br>
  <!--------Profile part 1----->
  
  
@@ -159,7 +161,7 @@
     <div class='container'>
         
 <div id= "head_container" hidden class= 'white-text grey darken-4 name'>
-        <div>Set up your profile</div>
+        <div style="text-align: center;">Set up your profile</div>
     </div>
     </div>
 
@@ -167,14 +169,12 @@
 
  <div hidden id = 'second_container' class=' container main_container'>
 
-    <form action="" method="POST">
-       {% csrf_token %}
-        <fieldset class='formm z-depth-4'>
+        <form class='formm z-depth-4'  >
             <div class="container pic_container">
-                <input name="profile_image" {% if form.is_bound %}value="{{ form.profile_image.value }}"{% endif %} accept='image/*' hidden  type='file' id='inpfil'  class='inpfil' onchange='previewimage(event)' />
+                <input accept='image/*' hidden  type='file' id='inpfil'  class='inpfil' onchange='previewimage(event)' />
 
                 <div class="container profile_pict image-preview">
-                <img onClick='clickpic()' width = '100%' height= '100%' src =  'xx.png' alt='profile' id='image' />
+                <img onClick='clickpic()' width = '100%' height= '70%' src =  'xx.png' alt='profile' id='image' />
  
                <i  onClick='clickpic()' class="logo medium 
                gbutton material-icons prefix">add_a_photo</i>
@@ -183,34 +183,34 @@
                 </div>
             </div>
             
-            <div class='input-field'>
+            <div class='input-field' style="width: 90%; margin: 0 auto;">
                 <i class="material-icons prefix ">
                      school
                     </i>
                <label class='htmlfor' htmlFor='school_name'>School Name</label>
-                <input type='text' name="school_name" {% if form.is_bound %}value="{{ form.school_name.value }}"{% endif %} id='school_name'  />
+                <input type='text' id='school_name'  />
             </div>
-          
-            <div class='input-field'>
+            <div class='input-field' style="width: 90%; margin: 0 auto;">
+                <i class="material-icons prefix">watch_later</i>
+               <label class='htmlfor' htmlFor='yot'>Year of Entry</label>
+                <input type='email' id='yot'  />
+            </div>
+            <div class='input-field' style="width: 90%; margin: 0 auto;">
                 <i class="material-icons prefix">group</i>
                <label class='htmlfor' htmlFor='gender'>Gender</label>
-                <select name="gender" {% if form.is_bound %}value="{{ form.gender.value }}"{% endif %} id="id_gender">
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Others" selected="">Others</option>
-                </select>
+                <input type='text' id='gender' />
             </div>
-            <div class='input-field'>
+            <div class='input-field' style="width: 90%; margin: 0 auto;">
                 <i class="material-icons prefix">hdr_strong</i>
                <label class='htmlfor' htmlFor='major_c'>Major courses</label>
-                <input name="major_courses" {% if form.is_bound %}value="{{ form.major_courses.value }}"{% endif %}  class="tooltipped" data-position='top'
+                <input  class="tooltipped" data-position='top'
                 data-tooltip='Please seperate each input with a comma. Example (Statistics, Politics)'
                 type='text' id='major_c' />
             </div>
-            <div class='input-field'>
+            <div class='input-field' style="width: 90%; margin: 0 auto;">
                 <i class="material-icons prefix">hdr_weak</i>
                <label class='htmlfor' htmlFor='minor_c'>Minor courses</label>
-                <input name="minor_courses" {% if form.is_bound %}value="{{ form.minor_courses.value }}"{% endif %} class="tooltipped" data-position='top'
+                <input class="tooltipped" data-position='top'
                 data-tooltip='Please seperate each input with a comma. Example (Engineering, Finance)'
                 type='text' id='minor_c' />
             </div>
@@ -218,13 +218,14 @@
                 <a href='#third_container' id='second' class='z-depth-3 next waves-effect waves-red  darken-2 btn white-text amber z-depth-0'>Next
           
                 </a>  </div>
+                <br>
             
-        
+        </form>
     
                 
             </div>
             
-        </fieldset>   
+            
             
             
             
@@ -234,10 +235,11 @@
             
             
             
-        <div hidden id = 'third_container' class='container third_container main_container'>
+ <div hidden id = 'third_container' class='container third_container main_container'>
     
-    <fieldset class='formm z-depth-4'  >
-        <div class='input-field'>
+    <form class='formm z-depth-4'  >
+        <br>
+        <div class='input-field' style="width: 90%; margin: 0 auto;">
             <i class="material-icons prefix ">
                 school
                </i>
@@ -250,67 +252,67 @@
               </select>
               <label>Select your personal interests</label>
         </div>
-        <div class='input-field'>
+        
+        <div class='input-field' style="width: 90%; margin: 0 auto;">
             <i class="material-icons prefix ">
                  school
                 </i>
            <label class='htmlfo' htmlFor='sh'>Skills you have</label>
-            <input name="skills_you_have" {% if form.is_bound %}value="{{ form.skills_you_have.value }}"{% endif %} class="tooltipped" data-position='top'
+            <input class="tooltipped" data-position='top'
             data-tooltip='Please seperate each input with a comma. Example (Programming, Dancing)'
             type='text' id='sh'  />
         </div>
-        <div class='input-field'>
+        <div class='input-field' style="width: 90%; margin: 0 auto;">
             <i class="material-icons prefix">watch_later</i>
            <label class='htmlfoo' htmlFor='su'>Skills you like to have</label>
-            <input name="skills_you_like_to_have" {% if form.is_bound %}value="{{ form.skills_you_like_to_have.value }}"{% endif %} class="tooltipped" data-position='top'
+            <input class="tooltipped" data-position='top'
              data-tooltip='Please seperate each input with a comma. Example (Photography, Singing)'
-              exitDelay=5 type='text' id='su'  />
+              exitDelay=5 type='email' id='su'  />
         </div>
-        <div class='input-field'>
+        <div class='input-field' style="width: 90%; margin: 0 auto;">
             <i class="material-icons prefix">group</i>
            <label class='html' htmlFor='h'>Hobbies</label>
-            <input name="hobbies" {% if form.is_bound %}value="{{ form.hobbies.value }}"{% endif %} class="tooltipped" data-position='top' 
+            <input class="tooltipped" data-position='top' 
             data-tooltip='Please seperate each input with a comma. Example (Gaming, Reading)'
             type='text' id='h' />
         </div>
-        <div class='input-field'>
+        <div class='input-field' style="width: 90%; margin: 0 auto;">
             <i class="material-icons prefix">hdr_strong</i>
            <label class='htmlfo' htmlFor='sl'>Spoken Languages</label>
-            <input name="spoken_languages" {% if form.is_bound %}value="{{ form.spoken_languages.value }}"{% endif %} class="tooltipped" data-position='top'
+            <input class="tooltipped" data-position='top'
             data-tooltip='Please seperate each input with a comma. Example (English, Yoruba)'
              type='text' id='sl' />
         </div>
-        <div class='input-field'>
+        <div class='input-field' style="width: 90%; margin: 0 auto;">
             <i class="material-icons prefix">hdr_weak</i>
            <label class='htmlfo' htmlFor='hr'>Heroes or Role models</label>
-            <input name="heros_or_rolemodels" {% if form.is_bound %}value="{{ form.heros_or_role_models.value }}"{% endif %} class="tooltipped" data-position='bottom'
+            <input class="tooltipped" data-position='bottom'
             data-tooltip='Please seperate each input with a comma. Example (Superman, Thor)'
             type='text' id='hr' />
         </div>
-        <div class='  next-div input-field'>
+        <div class='  next-div input-field' style="width: 90%; margin: 0 auto;">
    
             <a href='#second_container' id ='third' class='nextt        btn waves-effect waves-blue white-text amber darken-2 z-depth-0'>Back
       
             </a>
-            <button type="submit">save</button>
-        </div>
-         
-            <!--<div class='next-div cont center-align input-field' >
-                <button type="submit" class='z-depth-3 pulse next waves-effect waves-light  darken-2 btn white-text amber z-depth-0'>save</button>  
-                
-            </div>-->
-
-        
-        
-    </fieldset>
             </div>
+         
+ <div class='next-div cont center-align input-field' >
+                <button class='z-depth-3 pulse next waves-effect waves-light  darken-2 btn white-text amber z-depth-0'>save
+
+   
+                </button>  </div>
+<br>
+        
         
     </form>
+            </div>
+    
     </body>
  <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
      <script type='text/javascript'></script>
- <script src="{% static 'extrasheet/scripts/main.js' %}"></script>
+ <script src="main.js"></script>
  <script type='text/javascript'>
 
  
@@ -347,21 +349,8 @@ $('.next').click(function(e) {
    
 
 });
-   function previewimage(event){
-  var reader = new FileReader();
-  var image = document.getElementById('image')
-  reader.onload = function(){
-  if (reader.readyState == 2) {
-  image.src = reader.result
-  }
-  }
-  
-  reader.readAsDataURL(event.target.files[0])
-}
-function clickpic(){
-var stat = document.getElementById('inpfil')
-stat.click()
-}
+
+   
   
     </script>
     </html>

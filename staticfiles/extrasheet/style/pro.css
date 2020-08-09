@@ -1,0 +1,65 @@
+body {
+background: linear-gradient(to bottom right, white, ivory
+);
+}
+
+.profile_header{
+margin-top: 3px ;
+margin-bottom: 30px;
+text-align: center;
+font-family:times;
+letter-spacing: 1px;
+
+
+
+}
+
+.first_container {
+    margin-top: 40px;
+    
+
+}
+
+.first_profile {
+background: white;
+margin-top: 40px;
+padding: 25px;
+border-radius: 35px;
+
+}
+
+.divider {
+    width: 100%;
+    margin-top: 25px;
+    display:none;
+    
+
+}
+
+.ww {
+    color: white !important;
+}
+
+fieldset {
+    border: 0px;
+}
+
+.oo {
+    color: orange ;
+
+
+font-weight: 600;
+
+}
+
+.parag {
+    font-size: 17px;
+}
+
+.header_main {
+font-family:times;
+letter-spacing: 2px;
+
+font-weight: 500;
+
+}

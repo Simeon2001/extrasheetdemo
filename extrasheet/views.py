@@ -122,13 +122,17 @@ def join_club (request):
 #club joined 
 @login_required(login_url='login')    
 def club_join (request):
+    current_user = request.user
+    a = current_user.id
     cj = request.user.join.all()
+    cx = Club.objects.filter(name_id=a)
+    print (cx)
     #for club in cj:
         #print (club.club_name)
        #a=club.club_name
     #b=a
     #create_notify('you are in',cj )
-    return render (request,'club_joined.html',{'cj':cj})
+    return render (request,'club_joined.html',{'cj':cj,'cx':cx})
     
 #club forum    
 @login_required(login_url='login')    
@@ -160,6 +164,8 @@ def club_insight (request,pi) :
     current_user = request.user
     a = current_user.id
     club  = get_object_or_404(Club,pk=pi)
+    print (club.name_id, 'yes')
+    c = club.name_id
     comm = club.club_update.all()
     join = club.join.all()
     j = []
@@ -167,8 +173,9 @@ def club_insight (request,pi) :
         j.append(cb.id)
         
     print (j)
-    if not a in j:
-        return redirect ('clubl')
+    if c != a :
+        if not a in j:
+            return redirect ('clubl')
             
     insi = None
     if request.method == 'POST':
