@@ -9,27 +9,26 @@
     <link href="{% static 'extraheet/img/photo.jpg' %}" rel="apple-touch-icon">
 	<link rel="stylesheet" type="text/css" href="{% static 'extrasheet/style/stylle.css' %}">
 </head>
-<body>
- <div id="app">
-    <div class="picture" style="background-image: url('{% static 'extrasheet/img/a.jpg' %}');" v-if="first === 1">
+
+  <div id="app">
+    <div class="picture firstfm" style="background-image: url('{% static 'extrasheet/img/a.jpg' %}');" v-if="first === 1">
         <div class="textt">
             <h4 id="well">WELCOME TO</h4>
             
             <div style="background-image: url('{% static 'extrasheet/img/w.png' %}');" id="logo"><h1 id="E">E</h1></div>
             
             <h2 id="ext">ExtraSheet</h2>
-            <a href="#2"><button @click.prevent="next()" id="cont" ><h4>FIND<span> OUT</span> MORE..</h4></button></a>
+            <a href="#2"><button class='firstb' id="cont" ><h4>FIND<span> OUT</span> MORE..</h4></button></a>
         </div>
     </div>
     <!--=======================-->
-    <div id="2" class="page2" style="background-image: url('img/a.jpg');" v-if="first === 2">
+    <div hidden id="2" class="page2 secondfm" style="background-image: url('img/a.jpg');" v-if="first === 2">
         <div class="texttt">
             <div style="background-image: url('img/w.png');" id="logo"><h1 id="E">E</h1></div>
             
             <h2 id="ext">ExtraSheet</h2>
-            <a href="{% url 'register' %}"><button id="contr"><h4>CREATE ACCOUNT</h4></button></a>
-            <a href="{% url 'login' %}"><button id="contr"><h4>SIGN IN</h4></button></a>
-<br>
+            <a href="{% url 'register' %}"><button class="secondb" @click.prevent="next()" id="contr"><h4>CREATE ACCOUNT</h4></button></a>
+            <a href="{% url 'login' %}"><button class="thirdb" @click.prevent="sign()" id="contr"><h4>SIGN IN</h4></button></a>
             <h4 id="cond">By Signing Up You're Agreeing To Our Terms And Conditions</h4>
             
             
@@ -38,11 +37,48 @@
         
     </div>
     
+
     
- </div>  
     
-    <script src="{% static 'extrasheet/scripts/vue.min.js"></script>
-    <script src="{% static 'extrasheet/scripts/stylle.js"></script>
+  </div>  
+    
+
+
 <!--===============================================================================================-->
 </body>
+
+<script src="{% static 'extrasheet/scripts/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'extrasheet/scripts/stylle.js"></script>
+<script>
+    
+
+</script>
+  <script type='text/javascript'>
+  
+  
+  $(document).ready(function(){
+
+ $('.firstb').click( function() {
+    
+        $('.firstfm').hide()
+        $('.secondfm').show()
+    })
+    
+ $('.secondb').click( function() {
+    
+        $('.secondfm').hide()
+        $('.thirdfm').show()
+    })
+    
+ $('.thirdb').click( function() {
+    
+        $('.secondfm').hide()
+        
+        $('.fourthfm').show()
+    })
+    
+  } )
+    
+    
+</script>
 </html>
