@@ -141,7 +141,7 @@ header .scrolldown a:hover { color: #11ABB0; }
    left: 0;
    top: 0;
 }
-.opaque { background-color: black; }
+.opaque { background-color: #244653; }
 
 /* hide toggle button */
 #nav-wrap > a.mobile-btn { display: none; }
@@ -198,17 +198,17 @@ ul#nav li.current a { color: #f8bd0f; }
 
 
 
-#about a, #about a:visited  { color: linear-gradient(to bottom right, black, #040d44); }
+#about a, #about a:visited  { color: linear-gradient(to bottom right, #244653, #040d44); }
 #about a:hover, #about a:focus { color:#FAF0CA; }
 
 #about h2 {
    font: 22px/30px 'opensans-bold', sans-serif;
-   color: linear-gradient(to bottom right, black, #040d44);;
+   color: linear-gradient(to bottom right, #244653, #040d44);;
    margin-bottom: 12px;
 }
 #about p {
    line-height: 30px;
-   color: black;
+   color: #244653;
 }
 #about .profile-pic {
    position: relative;
@@ -225,7 +225,7 @@ ul#nav li.current a { color: #f8bd0f; }
 #about .download .button {
    margin-top: 6px;
    background: #f8bd0f;
-   color: black;
+   color: #244653;
 }
 #about .download .button:hover {
    background: #0d0d0d;
@@ -588,7 +588,7 @@ ul#nav li.current a { color: #f8bd0f; }
 /* ------------------------------------------------------------------ */
 
 #call-to-action {
-   background: black;
+   background: #244653;
    padding-top: 66px;
    padding-bottom: 48px;
 }
@@ -940,13 +940,13 @@ footer {
 }
 
 footer a, footer a:visited { color: #ffc107; }
-footer a:hover, footer a:focus { color: black; }
+footer a:hover, footer a:focus { color: #244653; }
 
 /* copyright */
 footer .copyright {
     margin: 0;
     padding: 0;
-    color: black;
+    color: #244653;
  }
 footer .copyright li {
     display: inline-block;

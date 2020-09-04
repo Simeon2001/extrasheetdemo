@@ -235,7 +235,7 @@ button::-moz-focus-inner {
     width: 100%;
     height: 100%;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-    background: black; }
+    background: #244653; }
 
 /* Main image in popup */
 img.mfp-img {

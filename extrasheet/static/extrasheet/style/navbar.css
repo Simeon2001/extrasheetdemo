@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .mainn {
     padding: 16 0;
 }
@@ -65,7 +67,7 @@
       
   }
   input.searchit {
-      color: black !important;
+      color: #244653 !important;
   }
   div.search:hover,div.searchh:hover {
       border-color: grey;
@@ -97,7 +99,7 @@ i.menuu:hover {
       color : red;
   }
   a.menu {
-font-family: "Comic sans ms";
+font-family: 'Roboto', sans-serif;
 letter-spacing: 2px;
 font-weight: 900;
 border-right: 5px solid #daa520
@@ -106,7 +108,7 @@ border-right: 5px solid #daa520
   }
   
   a.menuuu {
-font-family: "Comic sans ms";
+font-family: 'Roboto', sans-serif;
 letter-spacing: 5px;
 font-weight: 900;
 border-right: 5px solid #daa520
@@ -186,7 +188,7 @@ i.notii {
 
 a.menu-large {
     
-font-family:times;
+font-family:'Roboto', sans-serif;
 letter-spacing: 4px;
 font-weight: 900;
 
@@ -194,6 +196,6 @@ font-weight: 900;
 }
 
 li.contact {
-    border-right: 16px solid black;
+    border-right: 16px solid #244653;
 
 }

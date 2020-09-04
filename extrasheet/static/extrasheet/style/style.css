@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
     box-sizing: border-box;
 }
 body{
     width: 360px;
     height: 640px;
-    border: 280px solid black;
+    border: 280px solid #244653;
     border-top-width: 5px;
     border-bottom-width: 1px;
     margin: auto;

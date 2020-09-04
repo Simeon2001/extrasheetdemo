@@ -20,9 +20,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('extrasheet.urls')),
+    path('api/', include('eapi.urls')),
     path('admin/', admin.site.urls),
     
     path('accounts/', include('django.contrib.auth.urls')),
+    path('api-auth/', include('rest_framework.urls')),
     
 ]
 

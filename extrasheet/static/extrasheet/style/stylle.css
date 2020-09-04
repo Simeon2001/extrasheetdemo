@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 * {
   margin: 0px 0px;
   background-attachment: fixed;
@@ -137,7 +138,7 @@ body .page2::before {
     font-size: 2em;
     font-variant: small-caps;
     font-weight: 1000;
-    font-family: Papyrus ,Fantasy;
+    font-family: 'Roboto' , sans-serif;
     color: #212186;
     
 }

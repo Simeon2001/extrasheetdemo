@@ -1,11 +1,13 @@
-   .main {
+ @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+  .main {
      padding: 20px;
      border: 2px solid white
      }
      .name {
          border-top: 4px solid #DAA520;
  border-bottom: 4px solid #DAA520;
-         background: black;
+         background: #244653;
          color: white;
          padding: 18px;
          text-align: center;
@@ -15,7 +17,7 @@
          left: 0px;
          top: 0px;
         z-index: 3;
-font-family:times;
+font-family:'Roboto', sans-serif;
 letter-spacing: 4px;
 font-weight: 900;
 
@@ -31,7 +33,7 @@ font-weight: 900;
          
          border-radius: 30px;
 
-font-family:times;
+font-family:'Roboto', sans-serif;
 letter-spacing: 4px;
 font-size: 15px;
 font-weight: 900;
@@ -76,7 +78,7 @@ background: linear-gradient(to bottom right, white, ivory
       .image-preview {
             background-color: rgb(0, 0, 0);
         width: 200px; height: 220px;
-        border: 2px solid black;
+        border: 2px solid #244653;
         border-radius: 11500px;
         ppsition: relative;
         left:0px; right: 0px;
@@ -86,7 +88,7 @@ background: linear-gradient(to bottom right, white, ivory
         }
         #imag {
         border-radius: 1150px;
-        ppsition: relative;
+        position: relative;
         left:0px; right: 0px;
         z-index: -1;
         
@@ -122,7 +124,7 @@ i.prefix:not(.browser-default):focus:not([readonly]) {
     color: red;
 }
  .gen_fonts  {
-     font-family: times;
+     font-family: 'Roboto', sans-serif;
      letter-spacing: 1px;
 
  }
@@ -153,7 +155,7 @@ background: linear-gradient(to bottom right, floralwhite, ivory
         .image-preview {
             background-color: rgb(0, 0, 0);
         width: 200px; height: 220px;
-        border: 2px solid black;
+        border: 2px solid #244653;
         border-radius: 11500px;
         }
         #image {
@@ -176,7 +178,7 @@ margin: -84 0 0 165;
   .name {
          border-top: 4px solid #DAA520;
  border-bottom: 4px solid #DAA520;
-         background: black;
+         background: #244653;
          color: white;
          padding: 18px;
          text-align: center;
@@ -186,7 +188,7 @@ margin: -84 0 0 165;
          left: 0px;
          top: 0px;
         z-index: 3;
-font-family:times;
+font-family:'Roboto', sans-serif;
 letter-spacing: 4px;
 font-weight: 900;
 
@@ -203,7 +205,7 @@ font-weight: 900;
             padding: 5 0 39 0;
             border-radius: 40px;
             margin-top: 30px;
-font-family:times;
+font-family:'Roboto', sans-serif;
 letter-spacing: 4px;
 font-size: 15px;
 font-weight: 900;
@@ -255,7 +257,7 @@ position: relative;
             padding: 5 0 39 0;
             border-radius: 40px;
             margin: 30 0 30 5;
-font-family:times;
+font-family:'Roboto', sans-serif;
 letter-spacing: 4px;
 font-size: 15px;
 font-weight: 900;
@@ -267,7 +269,7 @@ font-weight: 900;
             padding: 5 0 39 0;
             border-radius: 40px;
             margin-top: 26 20 0 0;
-font-family:times;
+font-family:'Roboto', sans-serif;
 letter-spacing: 4px;
 font-size: 15px;
 font-weight: 900;

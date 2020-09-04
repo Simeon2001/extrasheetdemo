@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ['192.168.43.1','127.0.0.1','extrasheetdemo.herokuapp.com']
 
 INSTALLED_APPS = [
     'extrasheet',
+    'rest_framework',
+    'eapi',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
