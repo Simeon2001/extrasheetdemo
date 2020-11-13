@@ -121,6 +121,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+DROPBOX_APP_KEY = "0qlmyaai796170f"
+DROPBOX_APP_SECRET_KEY = "54gdd3u6nljhox7"
+DROPBOX_APP_ACCESS_TOKEN = ""
+DROPBOX_APP_ACCESS_TOKEN_SECRET = ""
+
+
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
